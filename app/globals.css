@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply min-h-svh flex flex-col overflow-x-hidden;
+  }
+  main {
+    @apply flex-1;
+  }
+}
