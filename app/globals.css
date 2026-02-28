@@ -1,10 +1,73 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-primary: var(--font-raleway);
+  --font-secondary: var(--font-instrument-serif);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #3a3a3a;
+  --primary: #1b9a5b;
+  --primary-foreground: #ffffff;
+  --muted: #656565;
+  --card: #f0f0f0;
+  --card-foreground: #3a3a3a;
+  --accent: #141414;
+  --accent-foreground: #ffffff;
+}
+
+.dark {
+  --background: #141414;
+  --foreground: #ffffff;
+  --primary: #1b9a5b;
+  --primary-foreground: #ffffff;
+  --muted: #9e9e9e;
+  --card: #262626;
+  --card-foreground: #ffffff;
+}
 
 @layer base {
+  * {
+    @apply transition-colors duration-500 ease-in-out;
+  }
   body {
-    @apply min-h-svh flex flex-col overflow-x-hidden;
+    @apply max-w-svw min-h-svh bg-background text-foreground font-primary flex flex-col overflow-x-hidden;
   }
   main {
     @apply flex-1;
   }
+  h1 {
+    @apply text-4xl lg:text-[82px] font-semibold leading-normal;
+  }
+  h2 {
+    @apply text-3xl lg:text-5xl font-semibold leading-10 lg:leading-[64px];
+  }
+  h3 {
+    @apply text-2xl lg:text-[32px] font-semibold;
+  }
+  p {
+    @apply text-muted font-medium leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-360 px-5 md:px-12.5 lg:px-25;
+  }
+}
+
+.text-highlight {
+  @apply text-primary font-secondary font-normal;
 }

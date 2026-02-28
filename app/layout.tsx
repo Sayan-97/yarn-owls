@@ -23,15 +23,19 @@ export const metadata: Metadata = {
   description: "",
 };
 
+import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${raleway.variable} ${instrumentSerif.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ThemeScrollProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeScrollProvider>
       </body>
     </html>
   );
