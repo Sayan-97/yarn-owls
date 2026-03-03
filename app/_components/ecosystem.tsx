@@ -41,9 +41,9 @@ function Word({
   scrollYProgress: MotionValue<number>;
   className: string;
 }) {
-  // Reveal across the first 45% of scroll
-  const start = (index / total) * 0.45;
-  const end = Math.min(start + 0.05, 0.48); // Each word has a small overlap window
+  // Reveal across the first 70% of scroll
+  const start = (index / total) * 0.7;
+  const end = Math.min(start + 0.1, 0.75); // Increased overlap and range for slower reveal
 
   const opacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
   const blurValue = useTransform(scrollYProgress, [start, end], [12, 0]);
@@ -77,10 +77,9 @@ export default function Ecosystems() {
     );
   }, []);
 
-  // Image: starts appearing after text finishes (0.5), finishes by 95% scroll
-  const imageScale = useTransform(scrollYProgress, [0.5, 0.95], [0, 1]);
-  const imageOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const imageY = useTransform(scrollYProgress, [0.5, 0.95], [100, 0]);
+  // Image: starts appearing after text finishes (0.75), finishes by 98% scroll
+  const imageOpacity = useTransform(scrollYProgress, [0.75, 0.85], [0, 1]);
+  const imageY = useTransform(scrollYProgress, [0.75, 0.98], ["100%", "0%"]);
 
   return (
     <section ref={containerRef} className="relative h-screen md:h-[130vh]">
@@ -119,7 +118,6 @@ export default function Ecosystems() {
             {/* ── Image Reveal (On Top of Everything) ──────────────────────── */}
             <motion.div
               style={{
-                scale: imageScale,
                 opacity: imageOpacity,
                 y: imageY,
               }}
