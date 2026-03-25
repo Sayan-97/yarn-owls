@@ -6,13 +6,13 @@ import { useThemeScroll } from "./theme-scroll-provider";
 
 interface ScrollThemeSectionProps {
   children: React.ReactNode;
-  theme: "light" | "dark";
+  theme?: "light" | "dark";
   className?: string;
 }
 
 export default function ScrollThemeSection({
   children,
-  theme,
+  theme = "light",
   className = "",
 }: ScrollThemeSectionProps) {
   const ref = useRef(null);

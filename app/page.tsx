@@ -4,19 +4,17 @@ import Marketing from "./_components/marketing";
 import Hero from "./_components/hero";
 import Ecosystems from "./_components/ecosystem";
 import { Testimonials } from "./_components/testimonials";
-import CTASection from "./_components/cta";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col gap-[130px]">
       <Hero />
       <Solutions />
-      <ScrollThemeSection theme="dark" className="py-24">
+      <ScrollThemeSection theme="dark" className="pt-[130px]">
         <Marketing />
         <Ecosystems />
       </ScrollThemeSection>
       <Testimonials />
-      <CTASection />
     </div>
   );
 }

@@ -10,7 +10,7 @@ import {
   useMotionValueEvent,
   useSpring,
 } from "motion/react";
-import LogoIcon from "@/public/app-logo-half.png";
+import LogoIcon from "@/public/app-logo-full.png";
 import { Button } from "./ui/button";
 
 const NAV_LINKS = ["Our Services", "About Us", "Contact Us", "Resources"];
@@ -67,7 +67,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-fit"
+      className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-[50%]"
       style={{ y, top: topOffset }}
     >
       <nav className="bg-[#0a0a0a] border border-[#474747] rounded-2xl p-1.5 flex items-center shadow-2xl min-w-[320px] md:min-w-[630px]">
@@ -76,9 +76,9 @@ export default function Header() {
           <Image
             src={LogoIcon}
             alt="Yarn Owls"
-            width={28}
-            height={28}
-            className="brightness-0 invert"
+            width={96}
+            height={22}
+            className=""
           />
         </Link>
 

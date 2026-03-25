@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaCarouselType } from "embla-carousel";
+import ScrollThemeSection from "@/components/scroll-theme-section";
 import { testimonials } from "@/constants";
 import { Button } from "@/components/ui/button";
-import ScrollThemeSection from "@/components/scroll-theme-section";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
-export function Testimonials() {
+export default function TeamsPowered() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
@@ -40,20 +40,12 @@ export function Testimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <ScrollThemeSection
-      theme="light"
-      className="container py-[130px] max-lg:overflow-hidden"
-    >
-      {/* Header Row */}
-      <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-foreground leading-tight max-w-2xl">
-          Hear From Teams{" "}
-          <span className="font-secondary italic font-normal text-primary">
-            We&apos;ve Powered.
-          </span>
+    <ScrollThemeSection className="container space-y-15 max-lg:overflow-hidden">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <h2>
+          Hear From Teams <span className="text-highlight">We've Powered.</span>
         </h2>
-
-        <div className="flex gap-3 md:gap-4 shrink-0">
+        <div className="flex max-lg:self-end gap-3 md:gap-4 shrink-0">
           <Button
             type="button"
             variant="outline"
@@ -76,8 +68,6 @@ export function Testimonials() {
           </Button>
         </div>
       </div>
-
-      {/* Carousel */}
       <div ref={emblaRef}>
         <div className="flex gap-4 md:gap-6">
           {testimonials.map((item) => (
@@ -100,9 +90,7 @@ export function Testimonials() {
           ))}
         </div>
       </div>
-
-      {/* Progress Bar */}
-      <div className="w-full mt-8 md:mt-12">
+      <div className="w-full">
         <div className="h-[5px] w-full bg-foreground/10 rounded-full relative overflow-hidden">
           <div
             className="absolute top-0 bottom-0 left-0 bg-primary rounded-full transition-[width] duration-300 ease-out"
