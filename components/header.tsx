@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Menu } from "lucide-react";
 import {
+  AnimatePresence,
   motion,
   useScroll,
   useMotionValueEvent,
@@ -15,26 +16,70 @@ import { Button } from "./ui/button";
 
 const NAV_LINKS = ["Our Services", "About Us", "Contact Us", "Resources"];
 
+const SERVICES = [
+  { label: "Demand-Gen", href: "/demand-gen" },
+  { label: "Inbound", href: "/inbound" },
+  { label: "Creative", href: "/creative" },
+  { label: "UI/UX", href: "/ui-ux" },
+  { label: "PPC", href: "/ppc" },
+  { label: "AI SEO", href: "/ai-seo" },
+];
+
 /** Nav link with a sliding underline on hover */
-function NavLink({ label, href }: { label: string; href: string }) {
+function NavLink({
+  label,
+  href,
+  children,
+}: {
+  label: string;
+  href: string;
+  children?: React.ReactNode;
+}) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <li>
+    <li
+      className="relative"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <Link
         href={href}
-        className="relative text-white/80 hover:text-white transition-colors text-sm font-medium whitespace-nowrap py-1 flex flex-col items-center gap-0"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        className="relative text-white/80 hover:text-white transition-colors text-sm font-medium whitespace-nowrap py-4 flex flex-col items-center gap-0"
       >
         <span>{label}</span>
         <motion.span
-          className="absolute -bottom-0.5 left-0 h-[1.5px] bg-white rounded-full"
+          className="absolute bottom-3 left-0 h-[1.5px] bg-white rounded-full"
           initial={{ width: "0%" }}
           animate={{ width: hovered ? "100%" : "0%" }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         />
       </Link>
+      {children && (
+        <AnimatePresence>
+          {hovered && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-1/2 -translate-x-1/2 pt-2 px-2"
+            >
+              <div className="bg-[#0a0a0a] border border-[#474747] rounded-xl overflow-hidden min-w-[160px] shadow-2xl">
+                {SERVICES.map((service) => (
+                  <Link
+                    key={service.label}
+                    href={service.href}
+                    className="block px-5 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </li>
   );
 }
@@ -86,7 +131,13 @@ export default function Header() {
         <div className="flex-1 hidden md:flex justify-center px-4">
           <ul className="flex items-center gap-6">
             {NAV_LINKS.map((item) => (
-              <NavLink key={item} label={item} href="#" />
+              <NavLink
+                key={item}
+                label={item}
+                href={item === "Resources" ? "/blogs" : "#"}
+              >
+                {item === "Our Services" && <div />}
+              </NavLink>
             ))}
           </ul>
         </div>

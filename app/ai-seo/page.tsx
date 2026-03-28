@@ -4,11 +4,13 @@ import DiscoveryChannel from "./_components/discovery-channel";
 import AiSeoHero from "./_components/ai-seo-hero";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import Testimonials from "@/components/testimonials";
+import AiSearch from "./_components/ai-search";
 
 export default function AiSeoPage() {
   return (
     <div className="space-y-[130px]">
       <AiSeoHero />
+      <AiSearch />
       <ScrollThemeSection theme="dark" className="space-y-[130px]">
         <DiscoveryChannel />
         <ChooseUs />

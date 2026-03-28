@@ -6,6 +6,7 @@ import ScrollThemeSection from "@/components/scroll-theme-section";
 import {
   ArrowRightIcon,
   BookCheckIcon,
+  MicIcon,
   SearchIcon,
   SparkleIcon,
 } from "lucide-react";
@@ -13,38 +14,28 @@ import Link from "next/link";
 
 const list = [
   {
-    title: "SEO-Optimized Editorial",
-    des: "High-conversion content targeting commercial intent keywords, decision-stage queries, and category comparison searches. Every asset is architected around SERP dominance and visitor-to-lead conversion optimization.",
+    title: "Search Engine Optimization (SEO)",
+    des: "Rankings still matter. We build topical authority, technical excellence, and content depth that dominates traditional search results and drives sustained organic traffic.",
     icon: SearchIcon,
   },
   {
-    title: "Technical SEO & Content Operations",
-    des: "Beyond keyword targeting. We execute comprehensive site audits, schema markup implementation, Core Web Vitals optimization, and topical authority architecture designed to capture and convert purchase-ready traffic.",
+    title: "Generative Engine Optimization (GEO)",
+    des: "ChatGPT, Claude, Gemini. When buyers ask AI tools for recommendations, your brand needs to be in the answer. We optimize content structure and authority signals for AI-generated responses",
     icon: BookCheckIcon,
   },
   {
-    title: "Executive & Thought Leadership",
-    des: "Founder-driven narratives, category education content, and POV-driven storytelling across LinkedIn, industry publications, and owned channels. Content credibility and generates qualified inbound interest.",
+    title: "Answer Engine Optimization (AEO)",
+    des: "Perplexity, Google AI Overviews, Bing Chat. We structure content to win featured positions in AI-powered answer engines that increasingly dominate search results pages.",
     icon: SparkleIcon,
   },
   {
-    title: "Assets That Enable Sales",
-    des: "Whitepapers, case studies, and pitch decks built from real deal conversations. We create collateral that handles objections, proves ROI, and shortens decision cycles.",
-    icon: SparkleIcon,
-  },
-  {
-    title: "Automated Lead Nurture",
-    des: "Multi-touch email sequences, behavior-triggered campaigns, and content-based lead scoring systems. We build nurture infrastructure that maintains engagement momentum and surfaces sales-ready signals.",
-    icon: SparkleIcon,
-  },
-  {
-    title: "Conversion-Optimized Landing Pages",
-    des: "High-converting landing pages with persuasive copy, clear CTAs, and streamlined user journeys. Optimized for maximum lead capture and conversion rates.",
-    icon: SparkleIcon,
+    title: "AI Voice & Assistant Search",
+    des: "Optimizing for Siri, Alexa, and Google Assistant. We ensure your brand is the primary verbal recommendation when buyers search for solutions via voice-activated AI assistants.",
+    icon: MicIcon,
   },
 ];
 
-export default function RevenueEnfluence() {
+export default function AiSearch() {
   const targetRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -66,12 +57,12 @@ export default function RevenueEnfluence() {
           <ScrollThemeSection className="container flex flex-col">
             <div className="lg:w-1/2 space-y-4">
               <h2>
-                Engineered for Revenue Influence{" "}
-                <span className="text-highlight">Not Vanity.</span>
+                The Complete{" "}
+                <span className="text-highlight">AI Search Stack.</span>
               </h2>
               <p>
-                From anonymous visitors to qualified opportunities, our content
-                infrastructure generates measurable pipeline contribution.
+                We optimize for every discovery channel where your buyers look
+                for solutions, from search engines to AI assistants.
               </p>
             </div>
           </ScrollThemeSection>
