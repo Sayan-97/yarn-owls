@@ -7,6 +7,7 @@ import Formulas from "./_components/formulas";
 import Image from "next/image";
 import HeroImg from "@/public/hero-bg-2.webp";
 import { Button } from "@/components/ui/button";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export default function DemandGenPage() {
   return (
@@ -33,7 +34,9 @@ export default function DemandGenPage() {
               research, across every discovery channel.
             </p>
           </div>
-          <Button>Get Started</Button>
+          <Button size="lg" className="h-11">
+            Get Started <ArrowUpRightIcon />
+          </Button>
         </div>
       </ScrollThemeSection>
       <Growth />

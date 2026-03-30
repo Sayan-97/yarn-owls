@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Deliver from "./_components/deliver";
 import Testimonials from "@/components/testimonials";
 import TrustedBrands from "./_components/trusted-brands";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -25,7 +26,9 @@ export default function HomePage() {
             Turning <span className="font-secondary font-normal">Motion</span>{" "}
             Into <span className="font-secondary font-normal">Momentum</span>
           </h1>
-          <Button className="mx-auto">Get Started</Button>
+          <Button size="lg" className="h-11 mx-auto">
+            Get Started <ArrowUpRightIcon />
+          </Button>
         </div>
       </ScrollThemeSection>
       <TrustedBrands />

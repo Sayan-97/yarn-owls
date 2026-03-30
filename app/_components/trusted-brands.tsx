@@ -11,7 +11,9 @@ import Image from "next/image";
 export default function TrustedBrands() {
   return (
     <ScrollThemeSection className="container space-y-8">
-      <p className="text-sm text-center">Trusted By Brands That Get It</p>
+      <p className="text-sm text-center text-muted">
+        Trusted By Brands That Get It
+      </p>
       <Marquee autoFill>
         <Image src={Img1} alt="" />
         <Image src={Img2} alt="" />
