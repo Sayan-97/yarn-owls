@@ -19,31 +19,37 @@ const list = [
   {
     step: 2,
     title: "Build Your Authority Infrastructure",
+    text: "Comprehensive optimization across content, technical foundation, and authority signals that all search systems evaluate.",
     points: [
-      "Audit rankings across traditional search and AI platforms",
-      "Identify keyword gaps and topic authority deficits",
-      "Analyze competitor visibility across all discovery channels",
-      "Pinpoint quick wins and strategic long-term plays",
+      "Develop topical authority clusters and semantic keyword strategies",
+      "Optimize technical SEO foundations for crawlability and indexing",
+      "Structure content for AI parsing and citation-worthiness",
+      "Build backlink profile and digital authority signals",
+      "Create schema markup and structured data frameworks",
     ],
   },
   {
     step: 3,
     title: "Deploy Across All Channels",
+    text: "Launch optimized content designed to rank in traditional search and get cited by AI systems.",
     points: [
-      "Audit rankings across traditional search and AI platforms",
-      "Identify keyword gaps and topic authority deficits",
-      "Analyze competitor visibility across all discovery channels",
-      "Pinpoint quick wins and strategic long-term plays",
+      "Publish SEO-optimized content targeting commercial intent",
+      "Format content for AI comprehension and citation",
+      "Implement technical optimizations site-wide",
+      "Activate link building and authority campaigns",
+      "Monitor rankings across search engines and AI platforms",
     ],
   },
   {
     step: 4,
     title: "Measure and Expand Dominance",
+    text: "Continuous tracking and optimization to maintain and grow visibility across evolving search landscapes.",
     points: [
-      "Audit rankings across traditional search and AI platforms",
-      "Identify keyword gaps and topic authority deficits",
-      "Analyze competitor visibility across all discovery channels",
-      "Pinpoint quick wins and strategic long-term plays",
+      "Track rankings in Google, ChatGPT, Perplexity, and other platforms",
+      "Monitor AI citation frequency and context",
+      "Test content formats and optimization approaches",
+      "Scale what works and adapt to algorithm changes",
+      "Expand into new keyword territories and topics",
     ],
   },
 ];
@@ -90,10 +96,10 @@ export default function DiscoveryChannel() {
 
                 <motion.div
                   onClick={() => setActiveStep(item.step)}
-                  className={`flex-1 rounded-2xl border transition-colors duration-300 cursor-pointer overflow-hidden ${
+                  className={`flex-1 rounded-2xl bg-card border transition-colors duration-300 cursor-pointer overflow-hidden ${
                     isActive
-                      ? "border-primary bg-[#121212]"
-                      : "border-white/10 bg-[#121212] hover:border-white/20"
+                      ? "border-primary"
+                      : "border-white/10 hover:border-white/20"
                   }`}
                   layout
                 >

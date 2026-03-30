@@ -9,50 +9,49 @@ const list = [
     step: 1,
     title: "Intelligence Gathering & Gap Analysis",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Comprehensive audit of content inventory, organic visibility, and conversion infrastructure",
+      "Map competitive content landscape and keyword opportunity gaps",
+      "Identify content deficits across awareness, consideration, and decision phases",
+      "Validate strategic alignment with ICP profiles and revenue objectives",
     ],
   },
   {
     step: 2,
     title: "Architecture & Keyword Strategy",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Build topical authority clusters and semantic keyword frameworks by funnel position",
+      "Map content formats and engagement depth to buyer research patterns",
+      "Configure publishing cadence and asset complexity for your sales motion (enterprise, mid-market, or self-serve)",
+      "Establish measurement framework for continuous optimization",
     ],
   },
   {
     step: 3,
     title: "Production & Quality Assurance",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Develop conversion-optimized content addressing specific buyer questions and objections",
+      "Create supporting conversion assets including comparison guides, ROI calculators, and demo resources",
+      "Enforce brand voice guidelines, SEO best practices, and accessibility standards",
     ],
   },
   {
     step: 4,
     title: "Distribution & Amplification Strategy",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Execute on-page optimization, internal linking architecture, and technical SEO requirements",
+      "Coordinate publication timing based on search trends and audience behavior data",
+      "Orchestrate cross-channel promotion via email campaigns, social distribution, and sales enablement",
+      "Run structured experiments on headlines, CTAs, and content formats",
     ],
   },
   {
     step: 5,
     title: "Performance Analysis & Iteration",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Track full-funnel metrics including organic sessions, MQL generation, and pipeline influence",
+      "Conduct regular conversion path analysis and content attribution modeling",
+      "Reprioritize content roadmap based on ROI data and opportunity cost analysis",
+      "Continuously refine topic selection, format mix, and conversion mechanisms",
     ],
   },
 ];
@@ -96,10 +95,10 @@ export default function Methodology() {
                 {/* Card */}
                 <motion.div
                   onClick={() => setActiveStep(item.step)}
-                  className={`flex-1 rounded-2xl border transition-colors duration-300 cursor-pointer overflow-hidden ${
+                  className={`flex-1 rounded-2xl bg-card border transition-colors duration-300 cursor-pointer overflow-hidden ${
                     isActive
-                      ? "border-primary bg-[#121212]"
-                      : "border-white/10 bg-[#121212] hover:border-white/20"
+                      ? "border-primary"
+                      : "border-white/10 hover:border-white/20"
                   }`}
                   layout
                 >

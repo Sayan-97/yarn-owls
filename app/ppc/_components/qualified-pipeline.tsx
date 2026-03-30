@@ -7,52 +7,43 @@ import { ArrowDownRightIcon, ArrowRightIcon } from "lucide-react";
 const list = [
   {
     step: 1,
-    title: "Intelligence Gathering & Gap Analysis",
+    title: "Map Success Metrics to Business Reality",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "We start by defining what actually matters for your specific business model and deal economics.",
+      "Connect ad performance to your sales cycle and deal value",
+      "Establish lead quality thresholds based on your close rates",
+      "Set KPIs tied to pipeline contribution, not clicks or impressions",
     ],
   },
   {
     step: 2,
-    title: "Architecture & Keyword Strategy",
+    title: "Build Your Paid Infrastructure",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Complete campaign setup from targeting logic to creative execution to post-click experiences.",
+      "Research buyer personas and high-intent search/browse patterns",
+      "Craft stage-specific messaging that addresses real objections",
+      "Produce platform-native ad creative and conversion-focused landing pages",
+      "Design user flows engineered for lead capture",
     ],
   },
   {
     step: 3,
-    title: "Production & Quality Assurance",
+    title: "Launch and Track What Matters",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Phased rollout with real-time monitoring of the metrics that predict revenue outcomes.",
+      "Activate campaigns across selected platforms",
+      "Track cost-per-lead and lead-to-opportunity conversion",
+      "Flag performance issues and targeting misalignment early",
     ],
   },
   {
     step: 4,
-    title: "Distribution & Amplification Strategy",
+    title: "Refine Based on Results, Not Hunches",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
-    ],
-  },
-  {
-    step: 5,
-    title: "Performance Analysis & Iteration",
-    points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Weekly optimization sprints focused on scaling winners and killing losers fast.",
+      "Test new creative angles and audience segments continuously",
+      "Shift budget aggressively toward top-performing campaigns",
+      "Feed performance insights back into GTM strategy and messaging",
     ],
   },
 ];
@@ -96,10 +87,10 @@ export default function QualifiedPipeline() {
                 {/* Card */}
                 <motion.div
                   onClick={() => setActiveStep(item.step)}
-                  className={`flex-1 rounded-2xl border transition-colors duration-300 cursor-pointer overflow-hidden ${
+                  className={`flex-1 rounded-2xl bg-card border transition-colors duration-300 cursor-pointer overflow-hidden ${
                     isActive
-                      ? "border-primary bg-[#121212]"
-                      : "border-white/10 bg-[#121212] hover:border-white/20"
+                      ? "border-primary"
+                      : "border-white/10 hover:border-white/20"
                   }`}
                   layout
                 >
