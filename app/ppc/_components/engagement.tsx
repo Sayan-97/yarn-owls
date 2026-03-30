@@ -1,33 +1,38 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import Image from "next/image";
-import TagLinearIcon from "@/public/tag-linear.png";
+import {
+  DiamondPercent,
+  Rss,
+  SquareDashedMousePointer,
+  ChartColumnIncreasing,
+  Bug,
+} from "lucide-react";
 
 export default function Engagement() {
   const list = [
     {
       title: "Campaign Strategy & Messaging",
       des: "We map ad campaigns to buyer research stages and intent signals, so every dollar reaches the right prospect with the right message at the moment they're most likely to engage.",
-      icon: "",
+      icon: DiamondPercent,
     },
     {
       title: "Channel Strategy & Execution",
       des: "We select platforms based on where your buyers actually spend time and what each channel does best. No spreading budget thin, we concentrate on where performance data proves it works.",
-      icon: "",
+      icon: Rss,
     },
     {
       title: "Landing Pages Built to Convert",
       des: "We design post-click experiences that match ad promise to page delivery. Consistent messaging, clear value props, and optimized conversion flows that turn paid traffic into qualified leads.",
-      icon: "",
+      icon: SquareDashedMousePointer,
     },
     {
       title: "Attribution & Performance Intelligence",
       des: "We build tracking systems that show true revenue impact, not just platform metrics. Clear visibility into what's generating pipeline so you can scale what works and cut what doesn't.",
-      icon: "",
+      icon: ChartColumnIncreasing,
     },
     {
       title: "Relentless Testing & Optimization",
       des: "We treat every campaign as a learning system. Constant experimentation with audiences, creative angles, bidding models, and formats to extract maximum value from your ad spend.",
-      icon: "",
+      icon: Bug,
     },
   ];
 
@@ -50,7 +55,7 @@ export default function Engagement() {
         {list.map((item) => (
           <div key={item.title} className="flex items-start gap-6">
             <div className="size-20 shrink-0 bg-primary dark:bg-[#202020] flex items-center justify-center rounded-lg">
-              <Image src={TagLinearIcon} alt="img" />
+              <item.icon size={32} className="text-white" />
             </div>
             <div className="space-y-3.5">
               <h4>{item.title}</h4>

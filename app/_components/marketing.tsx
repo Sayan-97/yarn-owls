@@ -1,27 +1,27 @@
-import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 const marketingItems = [
   {
     title: "Start With the Buyer, Not The Channel",
-    icon: "tag-linear",
+    icon: "solar:tag-linear",
     description:
       "Forget funnels. We map content to how your buyers actually research, evaluate, and decide, then build around those moments.",
   },
   {
     title: "Sync Your Entire Revenue Engine",
-    icon: "file-sync",
+    icon: "hugeicons:file-sync",
     description:
       "Content, CRM, attribution, sales enablement. When marketing and sales run on the same data, conversions stop falling through the cracks.",
   },
   {
     title: "Build Once, Scale Forever",
-    icon: "scale-broken",
+    icon: "solar:scale-broken",
     description:
       "No one-off campaigns. We design systems that compound so your content, brand, and distribution get stronger over time, not stale.",
   },
   {
     title: "Analytics That Actually Inform Decisions",
-    icon: "home-stats",
+    icon: "tabler:home-stats",
     description:
       "Real-time dashboards. Closed-loop attribution. We track what drives revenue and cut what doesn't, so you're always optimizing toward impact.",
   },
@@ -49,20 +49,7 @@ export default function Marketing() {
             className="relative flex gap-10 items-start py-12 first:pt-0 last:pb-0 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-linear-to-r before:from-white/60 before:to-transparent first:before:hidden"
           >
             <div className="size-16 rounded-lg bg-primary dark:bg-white/5 border border-black/10 dark:border-white/10 shrink-0 flex items-center justify-center relative">
-              <Image
-                src={`/${item.icon}-dark.svg`}
-                alt={item.title}
-                width={32}
-                height={32}
-                className="hidden dark:block"
-              />
-              <Image
-                src={`/${item.icon}-light.svg`}
-                alt={item.title}
-                width={32}
-                height={32}
-                className="block dark:hidden"
-              />
+              <Icon icon={item.icon} className="size-8 text-white" />
             </div>
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold">{item.title}</h3>

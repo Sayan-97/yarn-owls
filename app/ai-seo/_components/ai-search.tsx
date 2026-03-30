@@ -3,35 +3,30 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import {
-  ArrowRightIcon,
-  BookCheckIcon,
-  MicIcon,
-  SearchIcon,
-  SparkleIcon,
-} from "lucide-react";
+import { Icon } from "@iconify/react";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
 const list = [
   {
     title: "Search Engine Optimization (SEO)",
     des: "Rankings still matter. We build topical authority, technical excellence, and content depth that dominates traditional search results and drives sustained organic traffic.",
-    icon: SearchIcon,
+    icon: "hugeicons:ai-search-02",
   },
   {
     title: "Generative Engine Optimization (GEO)",
     des: "ChatGPT, Claude, Gemini. When buyers ask AI tools for recommendations, your brand needs to be in the answer. We optimize content structure and authority signals for AI-generated responses",
-    icon: BookCheckIcon,
+    icon: "humbleicons:ai",
   },
   {
     title: "Answer Engine Optimization (AEO)",
     des: "Perplexity, Google AI Overviews, Bing Chat. We structure content to win featured positions in AI-powered answer engines that increasingly dominate search results pages.",
-    icon: SparkleIcon,
+    icon: "si:ai-chat-line",
   },
   {
     title: "AI Voice & Assistant Search",
     des: "Optimizing for Siri, Alexa, and Google Assistant. We ensure your brand is the primary verbal recommendation when buyers search for solutions via voice-activated AI assistants.",
-    icon: MicIcon,
+    icon: "hugeicons:ai-scan",
   },
 ];
 
@@ -73,13 +68,16 @@ export default function AiSearch() {
               style={{ x }}
               className="flex gap-6 w-max pl-5 md:pl-12.5 lg:pl-34 pr-5 lg:pr-34 will-change-transform"
             >
-              {list.map((item, i) => (
+              {list.map((item) => (
                 <div
                   key={item.title}
                   className="w-[85vw] sm:w-[55vw] lg:w-[400px] bg-card rounded-[40px] p-10 flex flex-col gap-5 h-[400px] group hover:bg-accent transition-colors duration-300"
                 >
                   <div className="size-20 bg-primary group-hover:bg-white flex items-center justify-center rounded-2xl shrink-0 transition-colors duration-300">
-                    <item.icon className="size-10 text-white group-hover:text-primary transition-colors duration-300" />
+                    <Icon
+                      icon={item.icon}
+                      className="size-10 text-white group-hover:text-primary transition-colors duration-300"
+                    />
                   </div>
 
                   <div className="space-y-3 flex-1">

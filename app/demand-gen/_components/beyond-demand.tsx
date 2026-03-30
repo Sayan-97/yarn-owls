@@ -1,9 +1,9 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import {
   ArrowRightIcon,
-  BookCheckIcon,
-  SearchIcon,
-  SparkleIcon,
+  Goal,
+  SquareMousePointer,
+  BanknoteArrowUp,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -11,17 +11,17 @@ const list = [
   {
     title: "Brand & Positioning",
     des: "We craft positioning frameworks, messaging architecture, and visual identity that cuts through category noise and makes your brand instantly recognizable.",
-    icon: SearchIcon,
+    icon: Goal,
   },
   {
     title: "Web Experiences That Convert",
     des: "Full-service website strategy, design, and development. We build digital properties that educate visitors, capture leads, and scale with your business.",
-    icon: BookCheckIcon,
+    icon: SquareMousePointer,
   },
   {
     title: "Paid Media That Performs",
     des: "Multi-platform ad campaigns, conversion optimization, and performance analytics. We launch and scale paid programs that generate qualified pipeline, not just traffic.",
-    icon: SparkleIcon,
+    icon: BanknoteArrowUp,
   },
 ];
 

@@ -1,38 +1,44 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import Image from "next/image";
-import TagLinearIcon from "@/public/tag-linear.png";
+import {
+  CirclePlus,
+  MessageCircle,
+  Filter,
+  SquareStar,
+  FileSliders,
+  Cable,
+} from "lucide-react";
 
 export default function ContentStrategy() {
   const list = [
     {
       title: "Understand Your Market Position",
       des: "Every content strategy begins with deep audience research, competitive positioning analysis, and understanding the information overload your prospects navigate daily.",
-      icon: "",
+      icon: CirclePlus,
     },
     {
       title: "Define Your Message Architecture",
       des: "We establish your brand's voice guidelines, core narratives, and content territories. All informed by audience intelligence and strategic differentiation goals.",
-      icon: "",
+      icon: MessageCircle,
     },
     {
       title: "Select High-Impact Channels",
       des: "We don't dilute efforts across every platform. We identify where your audience evaluates solutions and concentrate resources on channels that generate measurable results.",
-      icon: "",
+      icon: Filter,
     },
     {
       title: "Design Your Content Framework",
       des: "Different stages demand different formats. We match your strategic message to the asset type, content depth, and distribution channel that maximizes engagement and conversion.",
-      icon: "",
+      icon: SquareStar,
     },
     {
       title: "Implement Scalable Systems",
       des: "We establish sustainable production workflows, from editorial calendars to design systems, engineered for consistent execution and continuous improvement.",
-      icon: "",
+      icon: FileSliders,
     },
     {
       title: "Measure, Learn, Optimize",
       des: "No guesswork. We instrument performance tracking, analyze what drives results, refine the approach based on data, and compound effectiveness with each iteration.",
-      icon: "",
+      icon: Cable,
     },
   ];
 
@@ -52,7 +58,7 @@ export default function ContentStrategy() {
         {list.map((item) => (
           <div key={item.title} className="flex items-center gap-6">
             <div className="size-20 shrink-0 bg-primary dark:bg-[#202020] flex items-center justify-center rounded-lg">
-              <Image src={TagLinearIcon} alt="img" />
+              <item.icon size={32} className="text-white" />
             </div>
             <div className="space-y-3.5">
               <h4>{item.title}</h4>

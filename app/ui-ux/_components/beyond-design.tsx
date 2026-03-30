@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   ArrowRightIcon,
-  BookCheckIcon,
-  SearchIcon,
-  SparkleIcon,
+  Search,
+  BanknoteArrowUp,
+  SquareMousePointer,
 } from "lucide-react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 
@@ -11,17 +11,17 @@ const list = [
   {
     title: "AI Search & Visibility Strategy",
     des: "From SEO to AEO to GEO optimization, we generate visibility across traditional search engines, AI assistants, and generative platforms that captures qualified traffic and converts discovery into pipeline.",
-    icon: SearchIcon,
+    icon: Search,
   },
   {
     title: "Paid Media & Performance Marketing",
     des: "Multi-platform campaign management, audience targeting, conversion optimization, and ROI tracking built to generate qualified leads and scale what works, not just spend budget.",
-    icon: BookCheckIcon,
+    icon: BanknoteArrowUp,
   },
   {
     title: "Website Strategy & Design",
     des: "We create digital experiences that convert efficiently, load quickly, and scale seamlessly. From messaging architecture to conversion-optimized UX, our web builds combine strategic copy with user-centric design.",
-    icon: SparkleIcon,
+    icon: SquareMousePointer,
   },
 ];
 

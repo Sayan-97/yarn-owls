@@ -3,34 +3,29 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import {
-  ArrowRightIcon,
-  BookCheckIcon,
-  SearchIcon,
-  SparkleIcon,
-} from "lucide-react";
+import { ArrowRightIcon, Globe, FileCheck, Award, Magnet } from "lucide-react";
 import Link from "next/link";
 
 const list = [
   {
     title: "SEO-Optimized Editorial",
     des: "High-conversion content targeting commercial intent keywords, decision-stage queries, and category comparison searches. Every asset is architected around SERP dominance and visitor-to-lead conversion optimization.",
-    icon: SearchIcon,
+    icon: Globe,
   },
   {
     title: "Technical SEO & Content Operations",
     des: "Beyond keyword targeting. We execute comprehensive site audits, schema markup implementation, Core Web Vitals optimization, and topical authority architecture designed to capture and convert purchase-ready traffic.",
-    icon: BookCheckIcon,
+    icon: FileCheck,
   },
   {
     title: "Executive & Thought Leadership",
     des: "Founder-driven narratives, category education content, and POV-driven storytelling across LinkedIn, industry publications, and owned channels. Content credibility and generates qualified inbound interest.",
-    icon: SparkleIcon,
+    icon: Award,
   },
   {
     title: "Assets That Enable Sales",
     des: "Whitepapers, case studies, and pitch decks built from real deal conversations. We create collateral that handles objections, proves ROI, and shortens decision cycles.",
-    icon: SparkleIcon,
+    icon: Magnet,
   },
 ];
 
@@ -72,7 +67,7 @@ export default function RevenueEnfluence() {
               style={{ x }}
               className="flex gap-6 w-max pl-5 md:pl-12.5 lg:pl-34 pr-5 lg:pr-34 will-change-transform"
             >
-              {list.map((item, i) => (
+              {list.map((item) => (
                 <div
                   key={item.title}
                   className="w-[85vw] sm:w-[55vw] lg:w-[400px] bg-card rounded-[40px] p-10 flex flex-col gap-5 h-[400px] group hover:bg-accent transition-colors duration-300"

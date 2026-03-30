@@ -1,28 +1,27 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import Image from "next/image";
-import TagLinearIcon from "@/public/tag-linear.png";
+import { Activity, BookOpen, Sparkles, ArrowDownUp } from "lucide-react";
 
 export default function RevenueGoals() {
   const list = [
     {
       title: "Built for Your Sales Motion",
       des: "Every page maps to your GTM reality: deal complexity, sales cycle length, and buying committee structure. Whether self-serve or enterprise, we design flows that match how your revenue actually happens.",
-      icon: "",
+      icon: Activity,
     },
     {
       title: "Rooted in Research, Not Assumptions",
       des: "We study how your market searches, what objections surface, and where prospects hesitate. Then build navigation, messaging hierarchy, and conversion moments around those insights.",
-      icon: "",
+      icon: BookOpen,
     },
     {
       title: "Visual Impact That Earns Trust Instantly",
       des: "Design quality signals brand credibility before prospects read a word. We apply sharp visual execution to every screen because polished interfaces communicate competence and reduce purchase anxiety.",
-      icon: "",
+      icon: Sparkles,
     },
     {
       title: "Continuously Optimized for What Works",
       des: "Post-launch, we instrument everything: scroll depth, click patterns, form abandonment. Then we test, refine, and double down on what actually moves conversion rates, not designer opinions.",
-      icon: "",
+      icon: ArrowDownUp,
     },
   ];
 
@@ -42,7 +41,7 @@ export default function RevenueGoals() {
         {list.map((item) => (
           <div key={item.title} className="flex items-start gap-6">
             <div className="size-20 shrink-0 bg-primary dark:bg-[#202020] flex items-center justify-center rounded-lg">
-              <Image src={TagLinearIcon} alt="img" />
+              <item.icon size={32} className="text-white" />
             </div>
             <div className="space-y-3.5">
               <h4>{item.title}</h4>

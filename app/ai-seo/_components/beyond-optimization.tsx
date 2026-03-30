@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   ArrowRightIcon,
-  BookCheckIcon,
-  SearchIcon,
-  SparkleIcon,
+  ChartLine,
+  BanknoteArrowUp,
+  SquareMousePointer,
 } from "lucide-react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 
@@ -11,17 +11,17 @@ const list = [
   {
     title: "Demand Generation",
     des: "Multi-channel strategies that unify organic, paid, and content into one coordinated system. We build demand engines that capture intent across every touchpoint and convert it into qualified pipeline.",
-    icon: SearchIcon,
+    icon: ChartLine,
   },
   {
     title: "Paid Media & Performance Marketing",
     des: "Multi-platform campaign management, audience targeting, conversion optimization, and ROI tracking built to generate qualified leads and scale what works, not just spend budget.",
-    icon: BookCheckIcon,
+    icon: BanknoteArrowUp,
   },
   {
     title: "Website Strategy & Design",
     des: "We create digital experiences that convert efficiently, load quickly, and scale seamlessly. From messaging architecture to conversion-optimized UX, our web builds combine strategic copy with user-centric design.",
-    icon: SparkleIcon,
+    icon: SquareMousePointer,
   },
 ];
 

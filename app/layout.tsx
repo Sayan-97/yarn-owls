@@ -4,6 +4,7 @@ import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SmoothScroll from "@/components/smooth-scroll";
+import LoaderWrapper from "@/components/loader-wrapper";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -31,13 +32,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${raleway.variable} ${instrumentSerif.variable}`}>
-        <SmoothScroll>
-          <ThemeScrollProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </ThemeScrollProvider>
-        </SmoothScroll>
+        <LoaderWrapper>
+          <SmoothScroll>
+            <ThemeScrollProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </ThemeScrollProvider>
+          </SmoothScroll>
+        </LoaderWrapper>
       </body>
     </html>
   );

@@ -1,32 +1,33 @@
 import Image from "next/image";
 import WaveImg from "@/public/wave.png";
+import { Workflow, Database, Cog, Flag, Award } from "lucide-react";
 
 export default function Formulas() {
   const list = [
     {
       title: "Integrated, Not Isolated",
       des: "Most teams run separate efforts and hope they connect. We build systems where every channel feeds the next.",
-      icon: "file-sync",
+      icon: Workflow,
     },
     {
       title: "Data-Driven, Not Guesswork",
       des: "We base decisions on search behavior, conversion patterns, and attribution data. Strategy flows from evidence, not hunches.",
-      icon: "scale-broken",
+      icon: Database,
     },
     {
       title: "Built for You, Not Borrowed",
       des: "Generic playbooks ignore your market reality. We design around your actual buyers, deal cycles, and business model",
-      icon: "tag-linear",
+      icon: Cog,
     },
     {
       title: "Strategy First, Channels Second",
       des: "We don't default to tactics. The right mix depends on where your buyers are and how they decide.",
-      icon: "home-stats",
+      icon: Flag,
     },
     {
       title: "Expertise Without Headcount",
       des: "Great marketing needs the right skills at the right time, not permanent teams. We deliver both without expanding your payroll.",
-      icon: "home-stats",
+      icon: Award,
     },
   ];
 
@@ -60,20 +61,7 @@ export default function Formulas() {
               className="flex items-center gap-6 py-12 first:pt-0 last:pb-0 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-linear-to-r before:from-white/20 before:to-transparent first:before:hidden"
             >
               <div className="size-20 shrink-0 bg-primary dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg flex items-center justify-center relative">
-                <Image
-                  src={`/${item.icon}-dark.svg`}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                  className="hidden dark:block"
-                />
-                <Image
-                  src={`/${item.icon}-light.svg`}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                  className="block dark:hidden"
-                />
+                <item.icon size={32} className="text-white" />
               </div>
               <div className="space-y-3.5">
                 <h4>{item.title}</h4>
