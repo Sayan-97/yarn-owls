@@ -75,25 +75,27 @@ export default function RevenueEnfluence() {
               {list.map((item, i) => (
                 <div
                   key={item.title}
-                  className="w-[85vw] sm:w-[55vw] lg:w-[400px] bg-card rounded-4xl p-8 flex flex-col gap-5 h-[400px]"
+                  className="w-[85vw] sm:w-[55vw] lg:w-[400px] bg-card rounded-[40px] p-10 flex flex-col gap-5 h-[400px] group hover:bg-accent transition-colors duration-300"
                 >
-                  <div className="size-20 bg-primary flex items-center justify-center rounded-2xl shrink-0">
-                    <item.icon className="size-10 text-white" />
+                  <div className="size-20 bg-primary group-hover:bg-white flex items-center justify-center rounded-2xl shrink-0 transition-colors duration-300">
+                    <item.icon className="size-10 text-white group-hover:text-primary transition-colors duration-300" />
                   </div>
 
                   <div className="space-y-3 flex-1">
-                    <h4 className="font-bold text-xl">{item.title}</h4>
-                    <p className="text-sm text-muted leading-relaxed">
+                    <h4 className="font-bold text-xl group-hover:text-accent-foreground transition-colors duration-300">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-muted group-hover:text-accent-foreground/70 leading-relaxed transition-colors duration-300">
                       {item.des}
                     </p>
                   </div>
 
                   <Link
                     href="#"
-                    className="text-primary flex items-center gap-2 text-sm font-semibold group mt-auto"
+                    className="text-primary group-hover:text-white flex items-center gap-2 text-sm font-semibold mt-auto transition-colors duration-300"
                   >
                     Learn More
-                    <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1 duration-300" />
                   </Link>
                 </div>
               ))}

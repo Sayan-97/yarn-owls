@@ -40,17 +40,25 @@ export default function BeyondAdvertising() {
       </div>
       <div className="grid lg:grid-cols-3 gap-6">
         {list.map((item) => (
-          <div key={item.title} className="bg-card p-6 rounded-3xl space-y-4">
-            <div className="size-20 bg-primary flex items-center justify-center rounded-2xl">
-              <item.icon className="size-11 text-white" />
+          <div
+            key={item.title}
+            className="bg-card p-10 rounded-[40px] space-y-4 group hover:bg-accent transition-colors duration-300"
+          >
+            <div className="size-20 bg-primary group-hover:bg-white flex items-center justify-center rounded-2xl transition-colors duration-300">
+              <item.icon className="size-11 text-white group-hover:text-primary transition-colors duration-300" />
             </div>
-            <h4 className="mt-7">{item.title}</h4>
-            <p>{item.des}</p>
+            <h4 className="mt-7 group-hover:text-accent-foreground transition-colors duration-300">
+              {item.title}
+            </h4>
+            <p className="group-hover:text-accent-foreground/70 transition-colors duration-300">
+              {item.des}
+            </p>
             <Link
               href={"#"}
-              className="text-primary font-medium flex items-center gap-2"
+              className="text-primary group-hover:text-white font-medium flex items-center gap-2 transition-colors duration-300"
             >
-              Learn More <ArrowRightIcon />
+              Learn More{" "}
+              <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         ))}

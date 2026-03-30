@@ -3,6 +3,7 @@ import { Instrument_Serif, Raleway } from "next/font/google";
 import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import SmoothScroll from "@/components/smooth-scroll";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -30,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${raleway.variable} ${instrumentSerif.variable}`}>
-        <ThemeScrollProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeScrollProvider>
+        <SmoothScroll>
+          <ThemeScrollProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ThemeScrollProvider>
+        </SmoothScroll>
       </body>
     </html>
   );
