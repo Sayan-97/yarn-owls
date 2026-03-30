@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import {
   AnimatePresence,
   motion,
@@ -47,7 +47,16 @@ function NavLink({
         href={href}
         className="relative text-white/80 hover:text-white transition-colors text-sm font-medium whitespace-nowrap py-4 flex flex-col items-center gap-0"
       >
-        <span>{label}</span>
+        <span className="flex items-center gap-1.5 leading-none">
+          {label}
+          {children && (
+            <ChevronDown
+              className={`size-3.5 transition-all duration-300 ease-out shrink-0 ${
+                hovered ? "rotate-180 opacity-100" : "opacity-60"
+              }`}
+            />
+          )}
+        </span>
         <motion.span
           className="absolute bottom-3 left-0 h-[1.5px] bg-white rounded-full"
           initial={{ width: "0%" }}

@@ -72,32 +72,14 @@ export default function Deliver() {
                   onHoverEnd={() => setActiveRow(null)}
                   initial={false}
                   animate={{
-                    flexGrow:
-                      typeof window !== "undefined" && window.innerWidth >= 1024
-                        ? !isSameRow
-                          ? 1
-                          : isActive
-                            ? 3
-                            : 2
-                        : 1,
+                    flexGrow: isSameRow ? (isActive ? 3 : 2) : 1,
                   }}
                   transition={{
                     type: "spring",
                     stiffness: 250,
                     damping: 25,
                   }}
-                  className="
-                    w-full
-                    lg:basis-0
-                    lg:flex-1
-                    h-full lg:h-[335px]
-                    bg-card
-                    flex flex-col justify-between max-lg:gap-4
-                    rounded-[30px] lg:rounded-[40px]
-                    p-6 lg:p-10
-                    group
-                    hover:bg-accent
-                  "
+                  className="w-full lg:basis-0 lg:flex-1 h-full lg:h-[335px] bg-card flex flex-col justify-between max-lg:gap-4 rounded-[30px] lg:rounded-[40px] p-6 lg:p-10 group hover:bg-accent transition-colors duration-300"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="group-hover:text-accent-foreground max-w-md">
