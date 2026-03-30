@@ -15,14 +15,13 @@ export default function CreativeHero() {
       <div className="container relative">
         <div className="lg:w-1/2 space-y-6">
           <h1 className="text-white lg:text-[64px] leading-tight">
-            AI SEO & Content That{" "}
-            <span className="text-highlight">Drives Deals,</span> Not Just
-            Downloads.
+            Copy, Design, and Narratives That{" "}
+            <span className="font-secondary font-normal">Drive Action</span>
           </h1>
           <p className="dark text-muted w-[85%]">
-            Most agencies write for algorithms and vanity metrics. We architect
-            content systems that capture buying intent, educate decision-makers,
-            and accelerate your sales velocity.
+            From conversion-focused landing pages to category-defining thought
+            leadership, we build assets that generate clarity, credibility, and
+            qualified pipeline.
           </p>
           <Button size="lg" className="h-11">
             Get Started <ArrowUpRightIcon />
