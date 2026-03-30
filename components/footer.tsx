@@ -20,43 +20,43 @@ const XIcon = () => (
 
 export default function Footer() {
   return (
-    <ScrollThemeSection
-      theme="dark"
-      className="bg-secondary text-white pt-[130px]"
-    >
+    <ScrollThemeSection className="bg-secondary bg-[#141414] text-white mt-32.5 space-y-32.5">
       {/* CTA Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-[130px]">
-        <div className="bg-primary text-primary-foreground rounded-[32px] p-12 md:p-20 relative overflow-hidden">
-          <div className="space-y-8 relative z-10">
-            <h2>
-              We're Your Marketing Team's{" "}
-              <span className="font-secondary italic font-normal">
-                Extend Button.
-              </span>
-            </h2>
-            <p className="lg:max-w-3xl text-white/80 text-lg leading-relaxed font-light">
-              We exist to help B2B brands close the gap between what marketing
-              could be and what it actually delivers, without the fluff, filler,
-              or cookie-cutter templates.
-            </p>
-            <button
-              type="button"
-              className="bg-white text-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:bg-zinc-100 transition-all hover:gap-3 group"
-            >
-              Book a call{" "}
-              <MoveUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-          </div>
+      <div className="relative">
+        <div className="absolute bottom-1/2 top-0 left-0 w-full bg-white"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="bg-primary text-primary-foreground rounded-[32px] p-12 md:p-20 relative overflow-hidden">
+            <div className="space-y-8 relative z-10">
+              <h2>
+                We're Your Marketing Team's{" "}
+                <span className="font-secondary italic font-normal">
+                  Extend Button.
+                </span>
+              </h2>
+              <p className="lg:max-w-3xl text-white/80 text-lg leading-relaxed font-light">
+                We exist to help B2B brands close the gap between what marketing
+                could be and what it actually delivers, without the fluff,
+                filler, or cookie-cutter templates.
+              </p>
+              <button
+                type="button"
+                className="bg-white text-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:bg-zinc-100 transition-all hover:gap-3 group"
+              >
+                Book a call{" "}
+                <MoveUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </div>
 
-          {/* Decorative Owl Watermark */}
-          <div className="absolute w-64 right-0 bottom-0 opacity-70 mix-blend-plus-lighter pointer-events-none select-none">
-            <Image src={OwlImg} alt="Owl" />
+            {/* Decorative Owl Watermark */}
+            <div className="absolute w-64 right-0 bottom-0 opacity-70 mix-blend-plus-lighter pointer-events-none select-none">
+              <Image src={OwlImg} alt="Owl" />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer Links */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-5">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-8">
           {/* Logo and Socials */}
           <div className="space-y-8">

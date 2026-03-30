@@ -77,12 +77,13 @@ export default function Ecosystems() {
     );
   }, []);
 
-  // Image: starts appearing after text finishes (0.75), finishes by 98% scroll
-  const imageOpacity = useTransform(scrollYProgress, [0.75, 0.85], [0, 1]);
-  const imageY = useTransform(scrollYProgress, [0.75, 0.98], ["100%", "0%"]);
+  // Image: starts appearing after text finishes (0.75) with a slight delay (0.82)
+  // Coming from the bottom with a very minimal fade as requested
+  const imageOpacity = useTransform(scrollYProgress, [0.82, 0.84], [0.5, 1]);
+  const imageY = useTransform(scrollYProgress, [0.82, 0.98], ["100%", "0%"]);
 
   return (
-    <section ref={containerRef} className="relative h-screen md:h-[130vh]">
+    <section ref={containerRef} className="relative h-[250vh] md:h-[400vh]">
       {/* Sticky frame covers the full screen while scrolling through the 350vh track */}
       <div className="sticky top-0 h-svh w-full overflow-hidden isolate">
         {/* Background Wave - Forced to the very back */}

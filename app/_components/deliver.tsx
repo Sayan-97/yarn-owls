@@ -2,39 +2,56 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { solutions } from "@/constants";
 import { ArrowRightIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import ScrollThemeSection from "@/components/scroll-theme-section";
+import { Button } from "@/components/ui/button";
 
-export default function Solutions() {
+const deliveries = [
+  {
+    title: "Strategy That Dominates Discovery",
+    description:
+      "Multi-channel roadmaps, search visibility architecture, and campaign frameworks that don't just plan - they execute. We build digital strategies that integrate SEO, AEO, GEO, paid media, content, and automation into one AI-optimized, revenue-driving system.",
+  },
+  {
+    title: "Content That Ranks & Converts",
+    description:
+      "SEO blogs that dominate search. Whitepapers that educate decision-makers. Landing pages that turn traffic into pipelines. We write for search engines and humans, because you need both.",
+  },
+  {
+    title: "Brand Systems That Stick",
+    description:
+      "Visual identities that demand attention and systems that maintain it. We create brand guidelines, design systems, and creative assets that ensure your business looks as professional as it operates.",
+  },
+  {
+    title: "Websites That Work Harder",
+    description:
+      "High-performance websites designed for conversion. From speed optimization to intuitive UX, we build digital storefronts that don't just look good - they convert visitors into loyal customers.",
+  },
+];
+
+export default function Deliver() {
   const [activeRow, setActiveRow] = useState<{
     row: number;
     index: number;
   } | null>(null);
 
-  const rows = Array.from({ length: Math.ceil(solutions.length / 2) }, (_, i) =>
-    solutions.slice(i * 2, i * 2 + 2),
+  const rows = Array.from(
+    { length: Math.ceil(deliveries.length / 2) },
+    (_, i) => deliveries.slice(i * 2, i * 2 + 2),
   );
 
   return (
-    <ScrollThemeSection
-      theme="light"
-      className="container space-y-12 lg:space-y-24"
-    >
-      {/* Heading */}
-      <div className="flex flex-col gap-5">
+    <ScrollThemeSection className="container space-y-15">
+      <div className="w-1/2 flex flex-col gap-6">
         <h2>
           What We <span className="text-highlight">Actually Deliver</span>
         </h2>
-        <p className="max-w-xl text-lg font-medium leading-relaxed">
+        <p>
           From meticulously crafted content to full-stack digital ecosystems,
           our services exist to transform scattered efforts into systems that
           scale, without the bloat.
         </p>
       </div>
-
-      {/* Cards */}
       <div className="space-y-6">
         {rows.map((row) => (
           <div

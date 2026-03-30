@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Raleway } from "next/font/google";
+import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import "./globals.css";
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
   title: "Yarn Owls",
   description: "",
 };
-
-import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
 
 export default function RootLayout({
   children,

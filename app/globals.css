@@ -43,13 +43,16 @@
     @apply transition-colors duration-500 ease-in-out;
   }
   body {
-    @apply max-w-svw min-h-svh bg-background text-foreground font-primary flex flex-col overflow-x-hidden;
+    @apply w-full min-h-svh flex flex-col bg-background text-foreground font-primary overflow-x-hidden;
   }
   main {
     @apply flex-1;
   }
-  h1 {
+  /* h1 {
     @apply text-4xl lg:text-[82px] font-semibold leading-normal;
+  } */
+  h1 {
+    @apply text-4xl lg:text-[64px] font-semibold leading-normal;
   }
   h2 {
     @apply text-3xl lg:text-5xl font-semibold leading-10 lg:leading-[64px];
