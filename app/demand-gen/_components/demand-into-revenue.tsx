@@ -9,40 +9,40 @@ const list = [
     step: 1,
     title: "Uncover the Real Gaps",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Deep-dive into your existing product experience and competitive landscape",
+      "Identify where users drop off and which usability issues go unresolved",
+      "Audit user flows, interface clarity, and interaction friction points",
+      "Pinpoint high-impact opportunities for immediate UX improvements",
     ],
   },
   {
     step: 2,
-    title: "Uncover the Real Gaps",
+    title: "Architect the Experience System",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Design a scalable UX framework aligned with business and user goals",
+      "Map user journeys, key interactions, and interface patterns",
+      "Build design systems and reusable component libraries",
+      "Set up usability benchmarks and feedback loops for validation",
     ],
   },
   {
     step: 3,
-    title: "Uncover the Real Gaps",
+    title: "Design and Deliver at Scale",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Create and iterate designs across web, mobile, and product interfaces",
+      "Launch high-fidelity screens, prototypes, and interaction flows",
+      "Test layouts, usability patterns, and user behaviors",
+      "Ensure seamless handoff with developers for smooth implementation",
     ],
   },
   {
     step: 4,
-    title: "Uncover the Real Gaps",
+    title: "Test, Learn, and Optimize",
     points: [
-      "Deep-dive your existing content library and competitive landscape",
-      "Identify where buyers drop off and what questions go unanswered",
-      "Audit search visibility, site performance, and conversion bottlenecks",
-      "Pinpoint high-impact opportunities for immediate wins",
+      "Monitor performance across usability, engagement, and conversion metrics",
+      "Iterate based on user feedback and behavioral insights",
+      "Refine high-impact flows and interface elements",
+      "Continuously enhance experiences to drive long-term user satisfaction",
     ],
   },
 ];
@@ -92,10 +92,10 @@ export default function DemandIntoRevenue() {
                 {/* Card */}
                 <motion.div
                   onClick={() => setActiveStep(item.step)}
-                  className={`flex-1 rounded-2xl border transition-colors duration-300 cursor-pointer overflow-hidden ${
+                  className={`flex-1 rounded-2xl bg-card border transition-colors duration-300 cursor-pointer overflow-hidden ${
                     isActive
-                      ? "border-primary bg-[#121212]"
-                      : "border-white/10 bg-[#121212] hover:border-white/20"
+                      ? "border-primary"
+                      : "border-white/10 hover:border-white/20"
                   }`}
                   layout
                 >

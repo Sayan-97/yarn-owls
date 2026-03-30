@@ -9,18 +9,18 @@ import Link from "next/link";
 
 const list = [
   {
-    title: "Search-First Content",
-    des: "More than rankings and traffic. We create content ecosystems that answer buyer questions, build topical authority, and drive conversions at every stage of the journey.",
+    title: "Brand & Positioning",
+    des: "We craft positioning frameworks, messaging architecture, and visual identity that cuts through category noise and makes your brand instantly recognizable.",
     icon: SearchIcon,
   },
   {
-    title: "High-Converting Copy",
-    des: "Websites and landing pages that persuade because they're rooted in customer research, competitive positioning, and relentless A/B testing. Every word earns its place.",
+    title: "Web Experiences That Convert",
+    des: "Full-service website strategy, design, and development. We build digital properties that educate visitors, capture leads, and scale with your business.",
     icon: BookCheckIcon,
   },
   {
-    title: "Assets That Enable Sales",
-    des: "Whitepapers, case studies, and pitch decks built from real deal conversations. We create collateral that handles objections, proves ROI, and shortens decision cycles.",
+    title: "Paid Media That Performs",
+    des: "Multi-platform ad campaigns, conversion optimization, and performance analytics. We launch and scale paid programs that generate qualified pipeline, not just traffic.",
     icon: SparkleIcon,
   },
 ];
