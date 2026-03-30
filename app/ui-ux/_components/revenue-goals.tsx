@@ -40,7 +40,7 @@ export default function RevenueGoals() {
       </div>
       <div className="grid gap-20">
         {list.map((item) => (
-          <div key={item.title} className="flex items-center gap-6">
+          <div key={item.title} className="flex items-start gap-6">
             <div className="size-20 shrink-0 bg-primary dark:bg-[#202020] flex items-center justify-center rounded-lg">
               <Image src={TagLinearIcon} alt="img" />
             </div>
