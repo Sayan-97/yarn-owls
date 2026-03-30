@@ -32,16 +32,6 @@ const list = [
     des: "Whitepapers, case studies, and pitch decks built from real deal conversations. We create collateral that handles objections, proves ROI, and shortens decision cycles.",
     icon: SparkleIcon,
   },
-  {
-    title: "Automated Lead Nurture",
-    des: "Multi-touch email sequences, behavior-triggered campaigns, and content-based lead scoring systems. We build nurture infrastructure that maintains engagement momentum and surfaces sales-ready signals.",
-    icon: SparkleIcon,
-  },
-  {
-    title: "Conversion-Optimized Landing Pages",
-    des: "High-converting landing pages with persuasive copy, clear CTAs, and streamlined user journeys. Optimized for maximum lead capture and conversion rates.",
-    icon: SparkleIcon,
-  },
 ];
 
 export default function RevenueEnfluence() {

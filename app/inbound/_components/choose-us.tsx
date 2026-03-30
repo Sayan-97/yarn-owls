@@ -1,29 +1,26 @@
+import Image from "next/image";
+
 export default function ChooseUs() {
   const list = [
     {
-      title: "Integrated, Not Isolated",
-      des: "Most teams run separate efforts and hope they connect. We build systems where every channel feeds the next.",
-      icon: "",
+      title: "Launch Velocity.",
+      des: "Zero recruiting friction. Zero knowledge transfer delays. We embed with your team in under a week and ship production-ready content immediately.",
+      icon: "tag-linear",
     },
     {
-      title: "Data-Driven, Not Guesswork",
-      des: "We base decisions on search behavior, conversion patterns, and attribution data. Strategy flows from evidence, not hunches.",
-      icon: "",
+      title: "Specialized Talent Stack.",
+      des: "Access strategists with vertical expertise. SEO specialists, conversion copywriters, and content operations pros, not mid-level marketers wearing too many hats.",
+      icon: "file-sync",
     },
     {
-      title: "Built for You, Not Borrowed",
-      des: "Generic playbooks ignore your market reality. We design around your actual buyers, deal cycles, and business model",
-      icon: "",
+      title: "Analytics That Inform Budget Decisions.",
+      des: "We report on pipeline contribution, cost-per-MQL by topic cluster, content ROI, and buyer journey attribution, not just traffic and time-on-page.",
+      icon: "scale-broken",
     },
     {
-      title: "Strategy First, Channels Second",
-      des: "We don't default to tactics. The right mix depends on where your buyers are and how they decide.",
-      icon: "",
-    },
-    {
-      title: "Expertise Without Headcount",
-      des: "Great marketing needs the right skills at the right time, not permanent teams. We deliver both without expanding your payroll.",
-      icon: "",
+      title: "Strategy Meets Execution Capacity.",
+      des: "Recommendations without implementation create zero value. We combine strategic consulting depth with full production capability across research, writing, design, technical implementation, and multi-channel distribution.",
+      icon: "home-stats",
     },
   ];
 
@@ -35,10 +32,28 @@ export default function ChooseUs() {
           <span className="text-highlight">Over Hiring.</span>
         </h2>
       </div>
-      <div className="grid gap-20">
+      <div className="flex flex-col">
         {list.map((item) => (
-          <div key={item.title} className="flex items-center gap-6">
-            <div className="size-20 shrink-0 bg-primary dark:bg-[#202020] rounded-lg"></div>
+          <div
+            key={item.title}
+            className="flex items-center gap-6 py-12 first:pt-0 last:pb-0 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-linear-to-r before:from-white/20 before:to-transparent first:before:hidden"
+          >
+            <div className="size-20 shrink-0 bg-primary dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-lg flex items-center justify-center relative">
+              <Image
+                src={`/${item.icon}-dark.svg`}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="hidden dark:block"
+              />
+              <Image
+                src={`/${item.icon}-light.svg`}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="block dark:hidden"
+              />
+            </div>
             <div className="space-y-3.5">
               <h4>{item.title}</h4>
               <p>{item.des}</p>
