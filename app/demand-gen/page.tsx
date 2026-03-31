@@ -40,7 +40,7 @@ export default function DemandGenPage() {
         </div>
       </ScrollThemeSection>
       <Growth />
-      <ScrollThemeSection theme="dark" className="space-y-[130px]">
+      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
         <DemandIntoRevenue />
         <Formulas />
       </ScrollThemeSection>

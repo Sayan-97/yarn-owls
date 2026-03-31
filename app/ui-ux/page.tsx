@@ -10,7 +10,7 @@ export default function UIUXPage() {
     <div className="space-y-[130px]">
       <UIUXHero />
       <RevenueGoals />
-      <ScrollThemeSection theme="dark" className="space-y-[130px]">
+      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
         <DesignProcess />
       </ScrollThemeSection>
       <Testimonials />

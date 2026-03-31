@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Raleway } from "next/font/google";
-import { ThemeScrollProvider } from "@/components/theme-scroll-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SmoothScroll from "@/components/smooth-scroll";
@@ -34,11 +33,9 @@ export default function RootLayout({
       <body className={`${raleway.variable} ${instrumentSerif.variable}`}>
         <LoaderWrapper>
           <SmoothScroll>
-            <ThemeScrollProvider>
-              <Header />
-              <main>{children}</main>
-              <Footer />
-            </ThemeScrollProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
           </SmoothScroll>
         </LoaderWrapper>
       </body>

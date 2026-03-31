@@ -13,7 +13,7 @@ export default function PPCPage() {
       <PPCHero />
       <Engagement />
       <Functions />
-      <ScrollThemeSection theme="dark" className="space-y-[130px]">
+      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
         <QualifiedPipeline />
         <ChooseUs />
       </ScrollThemeSection>

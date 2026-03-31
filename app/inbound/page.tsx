@@ -11,7 +11,7 @@ export default function InboundPage() {
     <div className="space-y-[130px]">
       <InboundHero />
       <RevenueEnfluence />
-      <ScrollThemeSection theme="dark" className="space-y-[130px]">
+      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
         <Methodology />
         <ChooseUs />
       </ScrollThemeSection>

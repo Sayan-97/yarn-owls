@@ -54,7 +54,7 @@ export default function Impact() {
   );
 
   return (
-    <ScrollThemeSection theme="dark" className="">
+    <ScrollThemeSection theme="dark" className="py-[130px]">
       <div ref={targetRef} className="relative h-[250vh]">
         <div className="sticky top-5 overflow-hidden flex flex-col justify-center gap-10">
           <ScrollThemeSection className="container flex flex-col">
