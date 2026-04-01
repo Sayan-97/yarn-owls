@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Instrument_Serif, Raleway } from "next/font/google";
 import Footer from "@/components/footer";
@@ -34,9 +35,13 @@ export default function RootLayout({
       <body className={`${raleway.variable} ${instrumentSerif.variable}`}>
         <LoaderWrapper>
           <SmoothScroll>
-            <Header />
+            <Suspense fallback={null}>
+              <Header />
+            </Suspense>
             <main>{children}</main>
-            <Footer />
+            <Suspense fallback={null}>
+              <Footer />
+            </Suspense>
             <ContactModal />
           </SmoothScroll>
         </LoaderWrapper>
