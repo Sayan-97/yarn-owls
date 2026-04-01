@@ -75,7 +75,7 @@ export default function Work() {
 
     return rawWords.map((word, i) => {
       const start = (i / totalWords) * 0.35;
-      const end = start + 0.15;
+      const end = start + 0.28;
 
       return { ...word, range: [start, end] as [number, number] };
     });
@@ -88,7 +88,7 @@ export default function Work() {
 
     return rawWords.map((word, i) => {
       const start = 0.35 + (i / totalWords) * 0.4;
-      const end = start + 0.1;
+      const end = start + 0.22;
 
       return { text: word, range: [start, end] as [number, number] };
     });
@@ -128,7 +128,7 @@ export default function Work() {
             </h2>
 
             {/* Paragraph */}
-            <p className="text-lg md:text-xl lg:text-2xl font-medium text-muted leading-relaxed">
+            <p className="text-lg md:text-xl font-medium text-muted leading-relaxed">
               {paragraphWords.map((word, i) => (
                 <Word
                   key={`p-${i}-${word.text}`}
