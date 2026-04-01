@@ -33,31 +33,123 @@ export default function TrustedBrands() {
         Trusted By Brands That Get It
       </p>
       <Marquee autoFill>
-        <Image src={Img1} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img2} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img3} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img4} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img5} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img6} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img7} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img8} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img9} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img10} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img11} className="w-[140px] h-[50px] mx-5" alt="" />
+        <Image
+          src={Img1}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img2}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img3}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img4}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img5}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img6}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img7}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img8}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img9}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img10}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img11}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
       </Marquee>
       <Marquee autoFill direction="right" className="mt-16">
-        <Image src={Img12} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img13} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img14} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img15} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img16} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img17} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img18} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img19} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img20} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img21} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img22} className="w-[140px] h-[50px] mx-5" alt="" />
-        <Image src={Img23} className="w-[140px] h-[50px] mx-5" alt="" />
+        <Image
+          src={Img12}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img13}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img14}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img15}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img16}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img17}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img18}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img19}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img20}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img21}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img22}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
+        <Image
+          src={Img23}
+          className="w-[140px] h-[50px] object-cover mx-5"
+          alt=""
+        />
       </Marquee>
     </ScrollThemeSection>
   );

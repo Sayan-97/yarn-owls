@@ -57,34 +57,19 @@ export default function TheTeam() {
 
 const team = [
   {
-    name: "Atriya",
-    designation: "Head of Operations",
-    image: "/team-1.png",
-  },
-  {
     name: "Supratik",
     designation: "Head of Marketing & Founder",
     image: "/team-2.png",
   },
   {
-    name: "Ipsita",
-    designation: "Content Writer",
-    image: "/team-3.png",
+    name: "Atriya",
+    designation: "Head of Operations",
+    image: "/team-1.png",
   },
   {
     name: "Aritra",
     designation: "Sales and Tech Lead",
     image: "/team-4.png",
-  },
-  {
-    name: "Subhayan",
-    designation: "SEO Specialist",
-    image: "/team-5.png",
-  },
-  {
-    name: "Sukanya",
-    designation: "Content Writer",
-    image: "/team-6.png",
   },
   {
     name: "Urna",
@@ -95,5 +80,20 @@ const team = [
     name: "Sritama",
     designation: "Content Marketing Manager",
     image: "/team-8.png",
+  },
+  {
+    name: "Sukanya",
+    designation: "Content Writer",
+    image: "/team-6.png",
+  },
+  {
+    name: "Subhayan",
+    designation: "SEO Specialist",
+    image: "/team-5.png",
+  },
+  {
+    name: "Ipsita",
+    designation: "Content Writer",
+    image: "/team-3.png",
   },
 ];

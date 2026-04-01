@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroImg from "@/public/aboutus-hero-img.webp";
 import Us from "./_components/us";
 import TheTeam from "./_components/the-team";
+import Work from "./_components/work";
 
 export default function AboutUs() {
   return (
@@ -32,6 +33,7 @@ export default function AboutUs() {
           </ContactButton>
         </div>
       </ScrollThemeSection>
+      <Work />
       <TheTeam />
       <Us />
     </div>

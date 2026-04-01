@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import { ArrowRightIcon } from "lucide-react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import { Button } from "@/components/ui/button";
+import MotionHeading from "@/components/MotionHeading";
+import MotionParagraph from "@/components/MotionParagraph";
 
 const deliveries = [
   {
@@ -43,14 +45,14 @@ export default function Deliver() {
   return (
     <ScrollThemeSection className="container space-y-15">
       <div className="w-1/2 flex flex-col gap-6">
-        <h2>
+        <MotionHeading tag="h2">
           What We <span className="text-highlight">Actually Deliver</span>
-        </h2>
-        <p>
+        </MotionHeading>
+        <MotionParagraph>
           From meticulously crafted content to full-stack digital ecosystems,
           our services exist to transform scattered efforts into systems that
           scale, without the bloat.
-        </p>
+        </MotionParagraph>
       </div>
       <div className="space-y-6">
         {rows.map((row) => (
