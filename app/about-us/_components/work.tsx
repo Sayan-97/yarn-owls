@@ -68,7 +68,7 @@ export default function Work() {
     const totalWords = rawWords.length;
     return rawWords.map((word, i) => {
       const start = (i / totalWords) * 0.4;
-      const end = start + 0.1;
+      const end = start + 0.15;
       return {
         ...word,
         range: [start, Math.min(end, 0.45)] as [number, number],
@@ -80,8 +80,8 @@ export default function Work() {
     const rawWords = PARAGRAPH_TEXT.split(/(\s+)/).filter((t) => t !== "");
     const totalWords = rawWords.length;
     return rawWords.map((word, i) => {
-      const start = 0.5 + (i / totalWords) * 0.4;
-      const end = start + 0.05;
+      const start = 0.45 + (i / totalWords) * 0.45;
+      const end = start + 0.1;
       return {
         text: word,
         range: [start, Math.min(end, 0.95)] as [number, number],
@@ -97,7 +97,7 @@ export default function Work() {
   const btnY = useTransform(scrollYProgress, [0.9, 0.95], [20, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[100vh] w-full">
+    <section ref={containerRef} className="relative h-[250vh] w-full">
       <div className="sticky top-30 w-full flex items-center overflow-hidden">
         {/* Large Owl Watermark Background */}
         <Image
