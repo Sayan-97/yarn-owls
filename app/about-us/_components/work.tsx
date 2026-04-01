@@ -5,6 +5,7 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
+  cubicBezier,
   type MotionValue,
 } from "motion/react";
 import Image from "next/image";
@@ -12,7 +13,9 @@ import { useRef, useMemo } from "react";
 import OwlImg from "@/public/cta-img.png";
 import { MoveUpRight } from "lucide-react";
 
-/** Word component for the reveal effect */
+const ease = cubicBezier(0.25, 1, 0.5, 1);
+
+/** Word component */
 function Word({
   text,
   range,
@@ -24,13 +27,15 @@ function Word({
   scrollYProgress: MotionValue<number>;
   className?: string;
 }) {
-  const opacity = useTransform(scrollYProgress, range, [0.1, 1]);
+  const opacity = useTransform(scrollYProgress, range, [0, 1], { ease });
   const blurValue = useTransform(scrollYProgress, range, [10, 0]);
+  const y = useTransform(scrollYProgress, range, [20, 0]);
+
   const filter = useMotionTemplate`blur(${blurValue}px)`;
 
   return (
     <motion.span
-      style={{ opacity, filter, display: "inline-block" }}
+      style={{ opacity, filter, y, display: "inline-block" }}
       className={className}
     >
       {text === " " ? "\u00A0" : text}
@@ -51,12 +56,13 @@ const PARAGRAPH_TEXT =
 
 export default function Work() {
   const containerRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start center", "end end"],
+    offset: ["start start", "end end"], // important for pinned sections
   });
 
-  // Calculate words with ranges for heading and paragraph
+  /** Heading */
   const headingWords = useMemo(() => {
     const rawWords = HEADING_PARTS.flatMap((part) =>
       part.text
@@ -66,92 +72,85 @@ export default function Work() {
     );
 
     const totalWords = rawWords.length;
+
     return rawWords.map((word, i) => {
-      const start = (i / totalWords) * 0.4;
+      const start = (i / totalWords) * 0.35;
       const end = start + 0.15;
-      return {
-        ...word,
-        range: [start, Math.min(end, 0.45)] as [number, number],
-      };
+
+      return { ...word, range: [start, end] as [number, number] };
     });
   }, []);
 
+  /** Paragraph */
   const paragraphWords = useMemo(() => {
     const rawWords = PARAGRAPH_TEXT.split(/(\s+)/).filter((t) => t !== "");
     const totalWords = rawWords.length;
+
     return rawWords.map((word, i) => {
-      const start = 0.45 + (i / totalWords) * 0.45;
+      const start = 0.35 + (i / totalWords) * 0.4;
       const end = start + 0.1;
-      return {
-        text: word,
-        range: [start, Math.min(end, 0.95)] as [number, number],
-      };
+
+      return { text: word, range: [start, end] as [number, number] };
     });
   }, []);
 
-  // Heading container motion
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
-
-  // Button motion
-  const btnOpacity = useTransform(scrollYProgress, [0.9, 0.95], [0, 1]);
-  const btnY = useTransform(scrollYProgress, [0.9, 0.95], [20, 0]);
+  /** Button */
+  const btnOpacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
+  const btnY = useTransform(scrollYProgress, [0.8, 1], [40, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[250vh] w-full">
-      <div className="sticky top-30 w-full flex items-center overflow-hidden">
-        {/* Large Owl Watermark Background */}
+    <section
+      ref={containerRef}
+      className="relative h-[180vh] w-full -mt-[30vh]" // controlled scroll space
+    >
+      {/* Sticky container */}
+      <div className="sticky top-0 h-screen flex items-center">
+        {/* Background */}
         <Image
           src={OwlImg}
           alt=""
-          className="absolute right-0 opacity-10 bottom-0 w-[20%] object-contain"
+          className="absolute right-0 opacity-10 bottom-0 w-[20%] object-contain pointer-events-none"
         />
 
         <div className="container relative z-10">
-          <motion.div
-            style={{ opacity: containerOpacity }}
-            className="space-y-10"
-          >
-            {/* Heading Section */}
-            <motion.div className="relative">
-              <h2 className="w-3/4 text-4xl md:text-5xl lg:text-[48px] leading-tight font-semibold">
-                {headingWords.map((word, i) => (
-                  <Word
-                    key={`h-${i}-${word.text}`}
-                    text={word.text}
-                    range={word.range}
-                    scrollYProgress={scrollYProgress}
-                    className={word.className}
-                  />
-                ))}
-              </h2>
-            </motion.div>
+          <div className="space-y-10">
+            {/* Heading */}
+            <h2 className="w-3/4 text-4xl md:text-5xl lg:text-[48px] leading-tight font-semibold">
+              {headingWords.map((word, i) => (
+                <Word
+                  key={`h-${i}-${word.text}`}
+                  text={word.text}
+                  range={word.range}
+                  scrollYProgress={scrollYProgress}
+                  className={word.className}
+                />
+              ))}
+            </h2>
 
-            {/* Paragraph Section */}
-            <div className="w-full">
-              <p className="text-lg md:text-xl lg:text-2xl font-medium text-muted leading-relaxed">
-                {paragraphWords.map((word, i) => (
-                  <Word
-                    key={`p-${i}-${word.text}`}
-                    text={word.text}
-                    range={word.range}
-                    scrollYProgress={scrollYProgress}
-                    className="text-muted"
-                  />
-                ))}
-              </p>
-            </div>
+            {/* Paragraph */}
+            <p className="text-lg md:text-xl lg:text-2xl font-medium text-muted leading-relaxed">
+              {paragraphWords.map((word, i) => (
+                <Word
+                  key={`p-${i}-${word.text}`}
+                  text={word.text}
+                  range={word.range}
+                  scrollYProgress={scrollYProgress}
+                  className="text-muted"
+                />
+              ))}
+            </p>
 
-            {/* Button Section */}
+            {/* Button */}
             <motion.div style={{ opacity: btnOpacity, y: btnY }}>
               <button
                 type="button"
                 className="bg-primary text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all hover:gap-3 group cursor-pointer"
               >
-                Explore Our Work{" "}
+                Explore Our Work
                 <MoveUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
