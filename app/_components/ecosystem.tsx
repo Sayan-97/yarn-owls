@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import { useRef, useMemo } from "react";
-import EcosystemImg from "@/public/hero-bg.png";
+import EcosystemImg from "@/public/INFOGRAPHICS.png";
 import WaveImg from "@/public/wave.png";
 
 const PARTS = [
@@ -80,7 +80,7 @@ export default function Ecosystems() {
   // Image: starts appearing after text finishes (0.75) with a slight delay (0.82)
   // Coming from the bottom with a very minimal fade as requested
   const imageOpacity = useTransform(scrollYProgress, [0.82, 0.84], [0.5, 1]);
-  const imageY = useTransform(scrollYProgress, [0.82, 0.98], ["100%", "0%"]);
+  const imageY = useTransform(scrollYProgress, [0.82, 0.98], ["90%", "0%"]);
 
   return (
     <section ref={containerRef} className="relative h-[250vh] md:h-[400vh]">
@@ -123,7 +123,7 @@ export default function Ecosystems() {
                 y: imageY,
               }}
               // Constrained to container width (w-full), centered vertically over text
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[300px] md:h-[500px] lg:h-[577px] rounded-[32px] md:rounded-[48px] overflow-hidden z-20 origin-center shadow-[0_16px_32px_-12px_rgba(0,0,0,0.2)]"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[300px] md:h-[500px] lg:h-[660px] rounded-[32px] md:rounded-[48px] overflow-hidden z-20 origin-center shadow-[0_16px_32px_-12px_rgba(0,0,0,0.2)]"
             >
               <Image
                 src={EcosystemImg}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Raleway } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import ContactModal from "@/components/contact-modal";
 import SmoothScroll from "@/components/smooth-scroll";
 import LoaderWrapper from "@/components/loader-wrapper";
 import "./globals.css";
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
             <Footer />
+            <ContactModal />
           </SmoothScroll>
         </LoaderWrapper>
       </body>

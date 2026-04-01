@@ -3,10 +3,10 @@ import Marketing from "./_components/marketing";
 import Ecosystems from "./_components/ecosystem";
 import Image from "next/image";
 import HeroImg from "@/public/hero-bg-1.webp";
-import { Button } from "@/components/ui/button";
 import Deliver from "./_components/deliver";
 import Testimonials from "@/components/testimonials";
 import TrustedBrands from "./_components/trusted-brands";
+import ContactButton from "@/components/ui/contact-button";
 import { ArrowUpRightIcon } from "lucide-react";
 
 export default function HomePage() {
@@ -26,9 +26,9 @@ export default function HomePage() {
             Turning <span className="font-secondary font-normal">Motion</span>{" "}
             Into <span className="font-secondary font-normal">Momentum</span>
           </h1>
-          <Button size="lg" className="h-11 mx-auto">
+          <ContactButton size="lg" className="h-11 mx-auto">
             Get Started <ArrowUpRightIcon />
-          </Button>
+          </ContactButton>
         </div>
       </ScrollThemeSection>
       <TrustedBrands />

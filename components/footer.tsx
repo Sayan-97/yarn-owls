@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Instagram, Facebook, MoveUpRight } from "lucide-react";
 import Logo from "@/public/app-logo-full.png";
 import OwlImg from "@/public/cta-img.png";
 import ScrollThemeSection from "./scroll-theme-section";
+import { usePathname } from "next/navigation";
 
 const XIcon = () => (
   <svg
@@ -19,24 +22,39 @@ const XIcon = () => (
 );
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isAboutPage = pathname === "/about-us";
+
   return (
     <ScrollThemeSection className="bg-secondary bg-[#141414] text-white mt-32.5 space-y-32.5">
       {/* CTA Section */}
       <div className="relative">
         <div className="absolute bottom-1/2 top-0 left-0 w-full bg-white"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="bg-primary text-primary-foreground rounded-[32px] p-12 md:p-20 relative overflow-hidden">
+          <div className="bg-[#16653e] text-primary-foreground rounded-[32px] p-12 md:p-20 relative overflow-hidden">
             <div className="space-y-8 relative z-10">
               <h2>
-                We're Your Marketing Team's{" "}
-                <span className="font-secondary italic font-normal">
-                  Extend Button.
-                </span>
+                {isAboutPage ? (
+                  <>
+                    Stay Close to
+                    <br />{" "}
+                    <span className="font-secondary font-normal">
+                      What's Changing
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    We're Your Marketing Team's{" "}
+                    <span className="font-secondary italic font-normal">
+                      Extend Button.
+                    </span>
+                  </>
+                )}
               </h2>
-              <p className="lg:max-w-3xl text-white/80 text-lg leading-relaxed font-light">
-                We exist to help B2B brands close the gap between what marketing
-                could be and what it actually delivers, without the fluff,
-                filler, or cookie-cutter templates.
+              <p className="lg:max-w-2xl text-white/80 text-lg leading-relaxed font-light">
+                {isAboutPage
+                  ? "Practical thinking on AI search, B2B content, digital strategy, websites, and performance-driven growth, without recycled advice or trend-driven filler."
+                  : "We exist to help B2B brands close the gap between what marketing could be and what it actually delivers, without the fluff, filler, or cookie-cutter templates."}
               </p>
               <button
                 type="button"
@@ -129,7 +147,7 @@ export default function Footer() {
                 Company
               </h4>
               <ul className="space-y-4">
-                {["About Us", "Contact Us"].map((item) => (
+                {["About Us"].map((item) => (
                   <li key={item}>
                     <Link
                       href="#"
@@ -147,7 +165,7 @@ export default function Footer() {
                 Resources
               </h4>
               <ul className="space-y-4">
-                {["Blogs", "Case Studies"].map((item) => (
+                {["Blogs"].map((item) => (
                   <li key={item}>
                     <Link
                       href="#"

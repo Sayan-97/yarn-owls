@@ -13,8 +13,13 @@ import {
 } from "motion/react";
 import LogoIcon from "@/public/app-logo-full.png";
 import { Button } from "./ui/button";
+import { contactModalState } from "@/components/contact-modal";
 
-const NAV_LINKS = ["Our Services", "About Us", "Contact Us", "Resources"];
+const NAV_LINKS = [
+  { label: "Our Services", href: "#" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Resources", href: "/blogs" },
+];
 
 const SERVICES = [
   { label: "Demand-Gen", href: "/demand-gen" },
@@ -139,13 +144,9 @@ export default function Header() {
         {/* Desktop nav links */}
         <div className="flex-1 hidden md:flex justify-center px-4">
           <ul className="flex items-center gap-6">
-            {NAV_LINKS.map((item) => (
-              <NavLink
-                key={item}
-                label={item}
-                href={item === "Resources" ? "/blogs" : "#"}
-              >
-                {item === "Our Services" && <div />}
+            {NAV_LINKS.map((link) => (
+              <NavLink key={link.label} label={link.label} href={link.href}>
+                {link.label === "Our Services" && <div />}
               </NavLink>
             ))}
           </ul>
@@ -153,7 +154,10 @@ export default function Header() {
 
         {/* CTA – desktop */}
         <div className="hidden md:block">
-          <Button className="h-11 rounded-xl">
+          <Button
+            className="h-11 rounded-xl cursor-pointer"
+            onClick={() => contactModalState.open()}
+          >
             Get In Touch
             <ArrowUpRight className="size-5" />
           </Button>
@@ -161,7 +165,10 @@ export default function Header() {
 
         {/* Mobile: CTA + hamburger icon */}
         <div className="flex md:hidden items-center gap-2 ml-auto mr-1.5">
-          <Button className="h-9 rounded-xl text-xs px-3 gap-1.5">
+          <Button
+            className="h-9 rounded-xl text-xs px-3 gap-1.5 cursor-pointer"
+            onClick={() => contactModalState.open()}
+          >
             Get In Touch
             <ArrowUpRight className="size-4" />
           </Button>
