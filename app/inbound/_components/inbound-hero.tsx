@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroImg from "@/public/hero-bg-3.webp";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
+import ContactButton from "@/components/ui/contact-button";
 
 export default function InboundHero() {
   return (
@@ -26,9 +27,9 @@ export default function InboundHero() {
             and accelerate your sales velocity.
           </p>
         </div>
-        <Button size="lg" className="h-11">
+        <ContactButton size="lg" className="h-11">
           Get Started <ArrowUpRightIcon />
-        </Button>
+        </ContactButton>
       </div>
     </ScrollThemeSection>
   );

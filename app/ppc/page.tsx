@@ -9,11 +9,14 @@ import ChooseUs from "./_components/choose-us";
 
 export default function PPCPage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <PPCHero />
       <Engagement />
       <Functions />
-      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
+      <ScrollThemeSection
+        theme="dark"
+        className="space-y-20 lg:space-y-40 py-20 lg:py-40"
+      >
         <QualifiedPipeline />
         <ChooseUs />
       </ScrollThemeSection>

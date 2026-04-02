@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroImg from "@/public/hero-bg-5.webp";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
+import ContactButton from "@/components/ui/contact-button";
 
 export default function UIUXHero() {
   return (
@@ -24,9 +25,9 @@ export default function UIUXHero() {
             delivers both.
           </p>
         </div>
-        <Button size="lg" className="h-11">
+        <ContactButton size="lg" className="h-11">
           Get Started <ArrowUpRightIcon />
-        </Button>
+        </ContactButton>
       </div>
     </ScrollThemeSection>
   );

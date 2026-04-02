@@ -8,10 +8,13 @@ import AiSearch from "./_components/ai-search";
 
 export default function AiSeoPage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <AiSeoHero />
       <AiSearch />
-      <ScrollThemeSection theme="dark" className="space-y-[130px]">
+      <ScrollThemeSection
+        theme="dark"
+        className="space-y-20 lg:space-y-40 py-20 lg:py-40"
+      >
         <DiscoveryChannel />
         <ChooseUs />
       </ScrollThemeSection>

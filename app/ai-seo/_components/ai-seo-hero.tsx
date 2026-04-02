@@ -3,6 +3,7 @@ import Image from "next/image";
 import BgImg from "@/public/ai-seo-hero-bg.webp";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
+import ContactButton from "@/components/ui/contact-button";
 
 export default function AiSeoHero() {
   return (
@@ -23,9 +24,9 @@ export default function AiSeoHero() {
             and visual search. We engineer discovery strategies that capture
             intent across every platform where B2B buyers research solutions.
           </p>
-          <Button size="lg" className="h-11">
+          <ContactButton size="lg" className="h-11">
             Get Started <ArrowUpRightIcon />
-          </Button>
+          </ContactButton>
         </div>
       </div>
     </ScrollThemeSection>

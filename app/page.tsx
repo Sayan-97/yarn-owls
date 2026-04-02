@@ -11,7 +11,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       {/* Hero */}
       <ScrollThemeSection className="relative p-2 lg:p-5">
         <Image
@@ -33,7 +33,7 @@ export default function HomePage() {
       </ScrollThemeSection>
       <TrustedBrands />
       <Deliver />
-      <ScrollThemeSection theme="dark" className="pt-[130px]">
+      <ScrollThemeSection theme="dark" className="py-20 lg:py-40">
         <Marketing />
         <Ecosystems />
       </ScrollThemeSection>

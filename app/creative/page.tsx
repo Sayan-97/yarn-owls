@@ -6,7 +6,7 @@ import Impact from "./_components/impact";
 
 export default function CreativePage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <CreativeHero />
       <ContentStrategy />
       <Impact />

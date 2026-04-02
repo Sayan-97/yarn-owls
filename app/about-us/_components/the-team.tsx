@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function TheTeam() {
   return (
-    <ScrollThemeSection theme="dark" className="py-[150px]">
+    <ScrollThemeSection theme="dark" className="py-20 lg:py-40">
       <div className="container text-center space-y-6">
         <h1>
           <span className="font-secondary font-normal">The Team</span> Behind

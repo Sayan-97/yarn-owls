@@ -99,10 +99,13 @@ function NavLink({
 }
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const { scrollY } = useScroll();
   const lastScrollY = useRef(0);
   const y = useSpring(0, { stiffness: 260, damping: 28, mass: 0.9 });
   const topOffset = useSpring(40, { stiffness: 260, damping: 28, mass: 0.9 });
+
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const delta = current - lastScrollY.current;
@@ -116,8 +119,8 @@ export default function Header() {
 
     if (Math.abs(delta) < 8) return;
 
-    if (delta > 0 && current > 100) {
-      y.set(-110); // increased slightly to clear the higher top-6 position
+    if (delta > 0 && current > 100 && !isOpen) {
+      y.set(-150); // increased to clear top position and ensure it's hidden
     } else {
       y.set(0);
     }
@@ -129,58 +132,161 @@ export default function Header() {
       className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-[50%]"
       style={{ y, top: topOffset }}
     >
-      <nav className="bg-[#0a0a0a] border border-[#474747] rounded-2xl p-1.5 flex items-center shadow-2xl min-w-[320px] md:min-w-[630px]">
-        {/* Logo */}
-        <Link href="/" className="ml-5 shrink-0 flex items-center">
-          <Image
-            src={LogoIcon}
-            alt="Yarn Owls"
-            width={96}
-            height={22}
-            className=""
-          />
-        </Link>
+      <nav className="bg-[#0a0a0a] border border-[#474747] rounded-2xl p-1.5 flex flex-col shadow-2xl relative">
+        <div className="flex items-center min-w-full h-12 md:h-auto">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="ml-5 shrink-0 flex items-center"
+            onClick={() => setIsOpen(false)}
+          >
+            <Image
+              src={LogoIcon}
+              alt="Yarn Owls"
+              width={96}
+              height={22}
+              className=""
+            />
+          </Link>
 
-        {/* Desktop nav links */}
-        <div className="flex-1 hidden md:flex justify-center px-4">
-          <ul className="flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
-              <NavLink key={link.label} label={link.label} href={link.href}>
-                {link.label === "Our Services" && <div />}
-              </NavLink>
-            ))}
-          </ul>
+          {/* Desktop nav links */}
+          <div className="flex-1 hidden md:flex justify-center px-4">
+            <ul className="flex items-center gap-6">
+              {NAV_LINKS.map((link) => (
+                <NavLink key={link.label} label={link.label} href={link.href}>
+                  {link.label === "Our Services" && <div />}
+                </NavLink>
+              ))}
+            </ul>
+          </div>
+
+          {/* CTA – desktop */}
+          <div className="hidden md:block">
+            <Button
+              className="h-11 rounded-xl cursor-pointer"
+              onClick={() => contactModalState.open()}
+            >
+              Get In Touch
+              <ArrowUpRight className="size-5" />
+            </Button>
+          </div>
+
+          {/* Mobile: hamburger icon only */}
+          <div className="flex md:hidden items-center gap-2 ml-auto mr-1.5">
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className={`w-10 h-10 flex items-center justify-center rounded-xl border border-[#474747] text-white transition-colors ${
+                isOpen ? "bg-white/10" : ""
+              }`}
+              aria-label="Toggle menu"
+            >
+              <motion.div
+                animate={isOpen ? "open" : "closed"}
+                className="relative size-5 flex flex-col justify-center items-center"
+              >
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: -6 },
+                    open: { rotate: 45, y: 0 },
+                  }}
+                  className="absolute h-0.5 w-5 bg-white rounded-full transition-transform"
+                />
+                <motion.span
+                  variants={{
+                    closed: { opacity: 1 },
+                    open: { opacity: 0 },
+                  }}
+                  className="absolute h-0.5 w-5 bg-white rounded-full transition-all"
+                />
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: 6 },
+                    open: { rotate: -45, y: 0 },
+                  }}
+                  className="absolute h-0.5 w-5 bg-white rounded-full transition-transform"
+                />
+              </motion.div>
+            </button>
+          </div>
         </div>
 
-        {/* CTA – desktop */}
-        <div className="hidden md:block">
-          <Button
-            className="h-11 rounded-xl cursor-pointer"
-            onClick={() => contactModalState.open()}
-          >
-            Get In Touch
-            <ArrowUpRight className="size-5" />
-          </Button>
-        </div>
-
-        {/* Mobile: CTA + hamburger icon */}
-        <div className="flex md:hidden items-center gap-2 ml-auto mr-1.5">
-          <Button
-            className="h-9 rounded-xl text-xs px-3 gap-1.5 cursor-pointer"
-            onClick={() => contactModalState.open()}
-          >
-            Get In Touch
-            <ArrowUpRight className="size-4" />
-          </Button>
-
-          <button
-            type="button"
-            className="w-9 h-9 flex items-center justify-center rounded-xl border border-[#474747] text-white"
-            aria-label="Toggle menu"
-          >
-            <Menu className="size-4" />
-          </button>
-        </div>
+        {/* Mobile menu dropdown */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="flex flex-col gap-1 p-4 pt-2 border-t border-white/5 mt-1.5">
+                {NAV_LINKS.map((link) => (
+                  <div key={link.label} className="w-full">
+                    {link.label === "Our Services" ? (
+                      <div className="flex flex-col">
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen(!servicesOpen)}
+                          className="flex items-center justify-between w-full py-3 px-4 text-left text-white/80 font-medium hover:bg-white/5 rounded-xl transition-colors"
+                        >
+                          {link.label}
+                          <ChevronDown
+                            className={`size-4 transition-transform duration-300 ${
+                              servicesOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {servicesOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden pl-4 flex flex-col gap-1"
+                            >
+                              {SERVICES.map((service) => (
+                                <Link
+                                  key={service.label}
+                                  href={service.href}
+                                  onClick={() => setIsOpen(false)}
+                                  className="block py-2.5 px-4 text-sm text-white/60 hover:text-white transition-colors"
+                                >
+                                  {service.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block w-full py-3 px-4 text-white/80 font-medium hover:bg-white/5 rounded-xl transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+                <div className="mt-4 pt-4 border-t border-white/5">
+                  <Button
+                    className="w-full h-12 rounded-xl"
+                    onClick={() => {
+                      setIsOpen(false);
+                      contactModalState.open();
+                    }}
+                  >
+                    Get In Touch
+                    <ArrowUpRight className="size-5" />
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </motion.header>
   );

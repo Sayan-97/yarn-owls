@@ -8,10 +8,13 @@ import BeyondInbound from "./_components/beyond-inbound";
 
 export default function InboundPage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <InboundHero />
       <RevenueEnfluence />
-      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
+      <ScrollThemeSection
+        theme="dark"
+        className="space-y-20 lg:space-y-40 py-20 lg:py-40"
+      >
         <Methodology />
         <ChooseUs />
       </ScrollThemeSection>

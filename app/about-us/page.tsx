@@ -9,7 +9,7 @@ import Work from "./_components/work";
 
 export default function AboutUs() {
   return (
-    <div className="space-y-[150px]">
+    <div className="space-y-20 lg:space-y-40">
       <ScrollThemeSection className="relative p-2 lg:p-5">
         <Image
           src={HeroImg}

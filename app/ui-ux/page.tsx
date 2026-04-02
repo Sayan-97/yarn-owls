@@ -7,10 +7,13 @@ import ScrollThemeSection from "@/components/scroll-theme-section";
 
 export default function UIUXPage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <UIUXHero />
       <RevenueGoals />
-      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
+      <ScrollThemeSection
+        theme="dark"
+        className="space-y-20 lg:space-y-40 py-20 lg:py-40"
+      >
         <DesignProcess />
       </ScrollThemeSection>
       <Testimonials />

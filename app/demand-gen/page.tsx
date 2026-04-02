@@ -8,10 +8,11 @@ import Image from "next/image";
 import HeroImg from "@/public/hero-bg-2.webp";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
+import ContactButton from "@/components/ui/contact-button";
 
 export default function DemandGenPage() {
   return (
-    <div className="space-y-[130px]">
+    <div className="space-y-20 lg:space-y-40">
       <ScrollThemeSection className="relative p-2 lg:p-5">
         <Image
           src={HeroImg}
@@ -34,13 +35,16 @@ export default function DemandGenPage() {
               research, across every discovery channel.
             </p>
           </div>
-          <Button size="lg" className="h-11">
+          <ContactButton size="lg" className="h-11">
             Get Started <ArrowUpRightIcon />
-          </Button>
+          </ContactButton>
         </div>
       </ScrollThemeSection>
       <Growth />
-      <ScrollThemeSection theme="dark" className="space-y-[130px] py-[130px]">
+      <ScrollThemeSection
+        theme="dark"
+        className="space-y-20 lg:space-y-40 py-20 lg:py-40"
+      >
         <DemandIntoRevenue />
         <Formulas />
       </ScrollThemeSection>
