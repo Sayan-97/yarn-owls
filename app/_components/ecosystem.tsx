@@ -92,7 +92,7 @@ export default function Ecosystems() {
             src={WaveImg}
             alt="Background Wave"
             fill
-            className="object-cover pointer-events-none opacity-50"
+            className="object-cover pointer-events-none opacity-20"
             priority
           />
         </div>

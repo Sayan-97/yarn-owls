@@ -35,7 +35,7 @@ export default function ChooseUs() {
       <Image
         src={WaveImg}
         alt="img"
-        className="absolute w-full top-1/2 -translate-y-1/2"
+        className="absolute w-full top-1/2 -translate-y-1/2 opacity-20"
       />
       <div className="container grid lg:grid-cols-2 gap-8 items-start">
         <div className="space-y-6 lg:sticky lg:top-20">

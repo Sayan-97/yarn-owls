@@ -44,7 +44,7 @@ export default function Deliver() {
 
   return (
     <ScrollThemeSection className="container space-y-15">
-      <div className="w-1/2 flex flex-col gap-6">
+      <div className="lg:w-1/2 flex flex-col gap-6">
         <MotionHeading tag="h2">
           What We <span className="text-highlight">Actually Deliver</span>
         </MotionHeading>

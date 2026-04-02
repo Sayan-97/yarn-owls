@@ -2,12 +2,13 @@ import ScrollThemeSection from "@/components/scroll-theme-section";
 import Marketing from "./_components/marketing";
 import Ecosystems from "./_components/ecosystem";
 import Image from "next/image";
-import HeroImg from "@/public/hero-bg-1.webp";
 import Deliver from "./_components/deliver";
 import Testimonials from "@/components/testimonials";
 import TrustedBrands from "./_components/trusted-brands";
 import ContactButton from "@/components/ui/contact-button";
 import { ArrowUpRightIcon } from "lucide-react";
+import HeroImg from "@/public/hero-bg-1.webp";
+import HeroImgSm from "@/public/hero-bg-1-sm.png";
 
 export default function HomePage() {
   return (
@@ -18,7 +19,13 @@ export default function HomePage() {
           src={HeroImg}
           alt="hero-bg"
           priority
-          className="w-full h-[580px] lg:h-full max-h-[840px]"
+          className="hidden lg:block w-full h-[580px] lg:h-full max-h-[840px]"
+        />
+        <Image
+          src={HeroImgSm}
+          alt="hero-bg"
+          priority
+          className="lg:hidden w-full h-[580px] lg:h-full max-h-[840px]"
         />
         <div className="absolute inset-0 container text-center flex flex-col justify-center gap-4">
           <p className="text-white">B2B Marketing</p>

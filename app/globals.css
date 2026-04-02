@@ -59,7 +59,7 @@ html {
     @apply text-4xl lg:text-[64px] font-semibold leading-normal;
   }
   h2 {
-    @apply text-3xl lg:text-5xl font-semibold leading-10 lg:leading-[64px];
+    @apply text-[27px] lg:text-5xl font-semibold leading-10 lg:leading-[64px];
   }
   h3 {
     @apply text-2xl lg:text-[32px] font-semibold;
