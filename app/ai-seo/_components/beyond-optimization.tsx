@@ -12,16 +12,19 @@ const list = [
     title: "Demand Generation",
     des: "Multi-channel strategies that unify organic, paid, and content into one coordinated system. We build demand engines that capture intent across every touchpoint and convert it into qualified pipeline.",
     icon: ChartLine,
+    href: "/demand-gen",
   },
   {
     title: "Paid Media & Performance Marketing",
     des: "Multi-platform campaign management, audience targeting, conversion optimization, and ROI tracking built to generate qualified leads and scale what works, not just spend budget.",
     icon: BanknoteArrowUp,
+    href: "/ppc",
   },
   {
     title: "Website Strategy & Design",
     des: "We create digital experiences that convert efficiently, load quickly, and scale seamlessly. From messaging architecture to conversion-optimized UX, our web builds combine strategic copy with user-centric design.",
     icon: SquareMousePointer,
+    href: "/ui-ux",
   },
 ];
 
@@ -54,7 +57,7 @@ export default function BeyondOptimization() {
               {item.des}
             </p>
             <Link
-              href={"#"}
+              href={item.href}
               className="text-primary group-hover:text-white font-medium flex items-center gap-2 text-sm transition-colors duration-300 w-fit"
             >
               Learn More{" "}

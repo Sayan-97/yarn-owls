@@ -12,16 +12,19 @@ const list = [
     title: "Brand & Positioning",
     des: "We craft positioning frameworks, messaging architecture, and visual identity that cuts through category noise and makes your brand instantly recognizable.",
     icon: Goal,
+    href: "/creative",
   },
   {
     title: "Web Experiences That Convert",
     des: "Full-service website strategy, design, and development. We build digital properties that educate visitors, capture leads, and scale with your business.",
     icon: SquareMousePointer,
+    href: "/ui-ux",
   },
   {
     title: "Paid Media That Performs",
     des: "Multi-platform ad campaigns, conversion optimization, and performance analytics. We launch and scale paid programs that generate qualified pipeline, not just traffic.",
     icon: BanknoteArrowUp,
+    href: "/ppc",
   },
 ];
 
@@ -54,7 +57,7 @@ export default function BeyondDemand() {
               {item.des}
             </p>
             <Link
-              href={"#"}
+              href={item.href}
               className="text-primary group-hover:text-white font-medium flex items-center gap-2 transition-colors duration-300"
             >
               Learn More{" "}

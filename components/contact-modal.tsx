@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown, X } from "lucide-react";
 import { Button } from "./ui/button";
 import PopupBg from "@/public/popup-bg.webp";
 
@@ -98,13 +98,14 @@ export default function ContactModal() {
             />
 
             {/* Close Button */}
-            {/* <button
+            <button
               onClick={contactModalState.close}
-              className="absolute top-5 right-5 z-50 p-2 text-white/40 hover:text-white transition-colors bg-white/5 rounded-full backdrop-blur-md border border-white/10 cursor-pointer"
+              className="absolute top-5 right-5 z-50 p-2 text-white/40 hover:text-white hover:bg-white/10 transition-all bg-white/5 rounded-full backdrop-blur-md border border-white/10 cursor-pointer"
               aria-label="Close"
+              type="button"
             >
               <X className="size-5" />
-            </button> */}
+            </button>
 
             <div className="relative z-10 w-full h-full flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
               {/* Left Side */}
@@ -145,45 +146,76 @@ export default function ContactModal() {
                       type="text"
                       placeholder="Full Name*"
                       required
-                      className="w-full h-12 bg-[#0a0a0a]/50 backdrop-blur-md border border-[#1b1b1b] rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-[#6a6a6a] focus:outline-none focus:border-primary/50 transition-colors"
+                      className="w-full h-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 transition-all [font-size:inherit] autofill:shadow-[0_0_0_1000px_#060806_inset] autofill:text-white [-webkit-text-fill-color:white]"
                     />
 
                     <input
                       type="tel"
                       placeholder="Contact Number"
-                      className="w-full h-12 bg-[#0a0a0a]/50 backdrop-blur-md border border-[#1b1b1b] rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-[#6a6a6a] focus:outline-none focus:border-primary/50 transition-colors"
+                      className="w-full h-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 transition-all [font-size:inherit] autofill:shadow-[0_0_0_1000px_#060806_inset] autofill:text-white [-webkit-text-fill-color:white]"
                     />
 
                     <input
                       type="email"
                       placeholder="Work Email*"
                       required
-                      className="w-full h-12 bg-[#0a0a0a]/50 backdrop-blur-md border border-[#1b1b1b] rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-[#6a6a6a] focus:outline-none focus:border-primary/50 transition-colors"
+                      className="w-full h-12 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 transition-all [font-size:inherit] autofill:shadow-[0_0_0_1000px_#060806_inset] autofill:text-white [-webkit-text-fill-color:white]"
                     />
 
                     <div className="relative">
                       <select
                         defaultValue=""
                         required
-                        className="w-full h-12 appearance-none bg-[#0a0a0a]/50 backdrop-blur-md border border-[#1b1b1b] rounded-xl px-4 py-3.5 text-[15px] text-[#6a6a6a] focus:outline-none focus:border-primary/50 transition-colors cursor-pointer"
+                        className="w-full h-12 appearance-none bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3.5 text-[15px] text-white focus:outline-none focus:border-primary/50 transition-all cursor-pointer invalid:text-white/40"
                       >
-                        <option value="" disabled>
+                        <option
+                          value=""
+                          disabled
+                          className="bg-[#020603] text-white/40"
+                        >
                           Select Services
                         </option>
-                        <option value="demand-gen">Demand Generation</option>
-                        <option value="inbound">Inbound Marketing</option>
-                        <option value="creative">Creative Execution</option>
-                        <option value="ui-ux">UI/UX Design</option>
-                        <option value="ppc">Paid Media (PPC)</option>
-                        <option value="ai-seo">AI Search (SEO)</option>
+                        <option
+                          value="demand-gen"
+                          className="bg-[#020603] text-white"
+                        >
+                          Demand Generation
+                        </option>
+                        <option
+                          value="inbound"
+                          className="bg-[#020603] text-white"
+                        >
+                          Inbound Marketing
+                        </option>
+                        <option
+                          value="creative"
+                          className="bg-[#020603] text-white"
+                        >
+                          Creative Execution
+                        </option>
+                        <option
+                          value="ui-ux"
+                          className="bg-[#020603] text-white"
+                        >
+                          UI/UX Design
+                        </option>
+                        <option value="ppc" className="bg-[#020603] text-white">
+                          Paid Media (PPC)
+                        </option>
+                        <option
+                          value="ai-seo"
+                          className="bg-[#020603] text-white"
+                        >
+                          AI Search (SEO)
+                        </option>
                       </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-[#6a6a6a] pointer-events-none" />
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-white/40 pointer-events-none" />
                     </div>
 
                     <textarea
                       placeholder="Message"
                       rows={3}
-                      className="w-full bg-[#0a0a0a]/50 backdrop-blur-md border border-[#1b1b1b] rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-[#6a6a6a] focus:outline-none focus:border-primary/50 transition-colors resize-none mb-1"
+                      className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3.5 text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 transition-all resize-none mb-1"
                     />
 
                     <Button

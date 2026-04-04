@@ -3,8 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import { ArrowRightIcon, Globe, FileCheck, Award, Magnet } from "lucide-react";
-import Link from "next/link";
+import { Globe, FileCheck, Award, Magnet } from "lucide-react";
 
 const list = [
   {
@@ -85,13 +84,13 @@ export default function RevenueEnfluence() {
                     </p>
                   </div>
 
-                  <Link
+                  {/* <Link
                     href="#"
                     className="text-primary group-hover:text-white flex items-center gap-2 text-sm font-semibold mt-auto transition-colors duration-300"
                   >
                     Learn More
                     <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1 duration-300" />
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </motion.div>

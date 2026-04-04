@@ -1,6 +1,4 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import ContactButton from "@/components/ui/contact-button";
-import { ArrowUpRightIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function TheTeam() {
@@ -47,9 +45,9 @@ export default function TheTeam() {
             </div>
           ))}
         </div>
-        <ContactButton size="lg" className="h-11 mt-10 mx-auto">
+        {/* <ContactButton size="lg" className="h-11 mt-10 mx-auto">
           Join the Team <ArrowUpRightIcon />
-        </ContactButton>
+        </ContactButton> */}
       </div>
     </ScrollThemeSection>
   );

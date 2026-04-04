@@ -72,7 +72,7 @@ export default function Impact() {
               style={{ x }}
               className="flex gap-6 w-max pl-5 md:pl-12.5 lg:pl-34 pr-5 lg:pr-34 will-change-transform"
             >
-              {list.map((_item, i) => (
+              {list.map((_item) => (
                 <div
                   key={_item.title}
                   className="w-[85vw] sm:w-[55vw] lg:w-[696px] bg-card rounded-4xl p-8 flex flex-col gap-5 h-[562px]"

@@ -1,7 +1,6 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import Image from "next/image";
 import BgImg from "@/public/ai-seo-hero-bg.webp";
-import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
 import ContactButton from "@/components/ui/contact-button";
 

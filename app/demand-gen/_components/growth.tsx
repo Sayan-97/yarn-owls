@@ -1,11 +1,5 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
-import {
-  ArrowRightIcon,
-  BookCheckIcon,
-  SearchIcon,
-  SparkleIcon,
-} from "lucide-react";
-import Link from "next/link";
+import { BookCheckIcon, SearchIcon, SparkleIcon } from "lucide-react";
 
 const list = [
   {
@@ -47,13 +41,13 @@ export default function Growth() {
             <p className="group-hover:text-accent-foreground/70 transition-colors duration-300">
               {item.des}
             </p>
-            <Link
+            {/* <Link
               href={"#"}
               className="text-primary group-hover:text-white font-medium flex items-center gap-2 transition-colors duration-300"
             >
               Learn More{" "}
               <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
+            </Link> */}
           </div>
         ))}
       </div>

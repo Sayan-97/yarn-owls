@@ -20,7 +20,8 @@ html {
   --font-secondary: var(--font-instrument-serif);
 }
 
-:root, .light {
+:root,
+.light {
   --background: #ffffff;
   --foreground: #3a3a3a;
   --primary: #1b9a5b;

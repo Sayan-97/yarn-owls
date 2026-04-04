@@ -4,8 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import { Icon } from "@iconify/react";
-import { ArrowRightIcon } from "lucide-react";
-import Link from "next/link";
 
 const list = [
   {
@@ -83,18 +81,18 @@ export default function Us() {
                     <h4 className="font-bold text-xl group-hover:text-accent-foreground transition-colors duration-300">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-muted group-hover:text-accent-foreground/70 leading-relaxed transition-colors duration-300">
+                    <p className="text-muted group-hover:text-accent-foreground/70 leading-relaxed transition-colors duration-300">
                       {item.des}
                     </p>
                   </div>
 
-                  <Link
+                  {/* <Link
                     href="#"
                     className="text-primary group-hover:text-white flex items-center gap-2 text-sm font-semibold mt-auto transition-colors duration-300"
                   >
                     Learn More
                     <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1 duration-300" />
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </motion.div>

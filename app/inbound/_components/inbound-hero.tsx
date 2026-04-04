@@ -2,7 +2,6 @@ import ScrollThemeSection from "@/components/scroll-theme-section";
 import Image from "next/image";
 import HeroImg from "@/public/hero-bg-3.webp";
 import HeroImgSm from "@/public/hero-bg-3-sm.png";
-import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
 import ContactButton from "@/components/ui/contact-button";
 

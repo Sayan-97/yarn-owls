@@ -11,7 +11,6 @@ import {
 import Image from "next/image";
 import { useRef, useMemo } from "react";
 import OwlImg from "@/public/cta-img.png";
-import { MoveUpRight } from "lucide-react";
 
 const ease = cubicBezier(0.25, 1, 0.5, 1);
 
@@ -95,8 +94,8 @@ export default function Work() {
   }, []);
 
   /** Button */
-  const btnOpacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
-  const btnY = useTransform(scrollYProgress, [0.8, 1], [40, 0]);
+  // const btnOpacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
+  // const btnY = useTransform(scrollYProgress, [0.8, 1], [40, 0]);
 
   return (
     <section
@@ -141,7 +140,7 @@ export default function Work() {
             </p>
 
             {/* Button */}
-            <motion.div style={{ opacity: btnOpacity, y: btnY }}>
+            {/* <motion.div style={{ opacity: btnOpacity, y: btnY }}>
               <button
                 type="button"
                 className="bg-primary text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all hover:gap-3 group cursor-pointer"
@@ -149,7 +148,7 @@ export default function Work() {
                 Explore Our Work
                 <MoveUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

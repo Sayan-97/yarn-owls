@@ -1,40 +1,23 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, use } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import Image from "next/image";
 import Link from "next/link";
-import BlogsHeroImg from "@/public/blogs-hero-img.png";
+import { getWixImageUrl } from "@/lib/wix";
 
-const posts = [
-  {
-    author: "Alec Whitten",
-    date: "17 Jan 2026",
-    title: "A Quick Brown Fox Jumps Over A Lazy Dog And Eats Him",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",
-    tag: "Category Tag",
-    image: BlogsHeroImg,
-  },
-  {
-    author: "Alec Whitten",
-    date: "17 Jan 2026",
-    title: "A Quick Brown Fox Jumps Over A Lazy Dog And Eats Him",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",
-    tag: "Category Tag",
-    image: BlogsHeroImg,
-  },
-  {
-    author: "Alec Whitten",
-    date: "17 Jan 2026",
-    title: "A Quick Brown Fox Jumps Over A Lazy Dog And Eats Him",
-    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",
-    tag: "Category Tag",
-    image: BlogsHeroImg,
-  },
-];
+export default function BlogsHero({
+  posts,
+  categories,
+}: {
+  posts: Promise<Post[]>;
+  categories: Promise<Category[]>;
+}) {
+  const allPosts = use(posts);
+  const allCategories = use(categories);
+  const featuredPosts = allPosts.slice(0, 3);
 
-export default function BlogsHero() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: true,
@@ -54,7 +37,7 @@ export default function BlogsHero() {
   }, [emblaApi, onSelect]);
 
   return (
-    <ScrollThemeSection theme="dark" className="pt-32 pb-20">
+    <ScrollThemeSection theme="dark" className="pt-32 pb-20 lg:pb-32">
       <div className="container space-y-12">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-sm font-medium">
@@ -71,20 +54,19 @@ export default function BlogsHero() {
         {/* Carousel Viewport */}
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
-            {posts.map((post, i) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: mock list
-              <div key={i} className="flex-[0_0_100%] min-w-0 pr-4">
+            {featuredPosts.map((post) => (
+              <div key={post.slug} className="flex-[0_0_100%] min-w-0 pr-4">
                 <Link
-                  href="/blogs/featured"
+                  href={`/blogs/${post.slug}`}
                   className="grid lg:grid-cols-2 gap-12 items-center group cursor-pointer"
                 >
                   {/* Image Side */}
                   <div className="relative w-full h-[347px] max-w-[552px] overflow-hidden rounded-[40px]">
                     <Image
-                      src={post.image}
-                      alt="Featured post"
+                      src={getWixImageUrl(post.media?.wixMedia?.image) || ""}
+                      alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
@@ -92,20 +74,30 @@ export default function BlogsHero() {
                   <div className="space-y-6">
                     <div className="space-y-4">
                       <p className="text-primary font-semibold tracking-wide text-sm">
-                        {post.author} • {post.date}
+                        {post.author} •{" "}
+                        {new Date(post.lastPublishedDate).toLocaleDateString(
+                          "en-GB",
+                          {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                          },
+                        )}
                       </p>
-                      <h1 className="text-white text-4xl lg:text-5xl font-bold leading-tight group-hover:text-primary transition-colors">
+                      <h1 className="text-white text-4xl lg:text-5xl font-bold leading-tight line-clamp-3 group-hover:text-primary transition-colors">
                         {post.title}
                       </h1>
-                      <p className="text-white/60 text-lg leading-relaxed">
-                        {post.des}
+                      <p className="text-white/60 text-lg leading-relaxed line-clamp-3">
+                        {post.excerpt}
                       </p>
                     </div>
 
                     {/* Category Tag */}
                     <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
                       <span className="text-primary text-xs font-bold uppercase tracking-wider">
-                        {post.tag}
+                        {allCategories.find((cat) =>
+                          post.categoryIds?.includes(cat._id as string),
+                        )?.label || "Category"}
                       </span>
                     </div>
                   </div>
@@ -117,11 +109,10 @@ export default function BlogsHero() {
 
         {/* Custom Pagination Dots - Pill Style */}
         <div className="flex justify-center gap-2 pt-8">
-          {posts.map((_, i) => (
+          {featuredPosts.map((post, i) => (
             <button
               type="button"
-              // biome-ignore lint/suspicious/noArrayIndexKey: mock list
-              key={i}
+              key={post.slug}
               onClick={() => emblaApi?.scrollTo(i)}
               className={`transition-all duration-300 rounded-full h-[4px] ${
                 selectedIndex === i

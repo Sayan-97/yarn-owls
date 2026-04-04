@@ -12,16 +12,19 @@ const list = [
     title: "AI Search & Visibility Strategy",
     des: "From SEO to AEO to GEO optimization, we generate visibility across traditional search engines, AI assistants, and generative platforms that captures qualified traffic and converts discovery into pipeline.",
     icon: Search,
+    href: "/ai-seo",
   },
   {
     title: "Demand Generation",
     des: "Multi-channel strategies that unify organic, paid, and content into one coordinated system. We build demand engines that capture intent across every touchpoint and convert it into qualified pipeline.",
     icon: ChartLine,
+    href: "/demand-gen",
   },
   {
     title: "Website Strategy & Design",
     des: "We create digital experiences that convert efficiently, load quickly, and scale seamlessly. From messaging architecture to conversion-optimized UX, our web builds combine strategic copy with user-centric design.",
     icon: SquareMousePointer,
+    href: "/ui-ux",
   },
 ];
 
@@ -54,7 +57,7 @@ export default function BeyondAdvertising() {
               {item.des}
             </p>
             <Link
-              href={"#"}
+              href={item.href}
               className="text-primary group-hover:text-white font-medium flex items-center gap-2 transition-colors duration-300"
             >
               Learn More{" "}
