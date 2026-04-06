@@ -7,7 +7,7 @@ export default function AiSeoHero() {
   return (
     <ScrollThemeSection className="relative h-screen overflow-hidden flex items-center">
       <div className="absolute inset-0 px-2 lg:px-5 pt-2 lg:pt-5">
-        <div className="relative size-full overflow-hidden rounded-2xl">
+        <div className="relative size-full h-[707px] lg:h-[840px] overflow-hidden rounded-2xl">
           <Image src={BgImg} alt="img" fill className="object-cover" priority />
         </div>
       </div>

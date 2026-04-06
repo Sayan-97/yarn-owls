@@ -51,26 +51,26 @@ export const marketingItems = [
 export const testimonials = [
   {
     quote:
-      "We've been working with Yarn Owls for a few years now. They've allowed us to add top tier front-end skills to our team at a very reasonable price. They've done an excellent job rebuilding our public website and now they're redoing our backend dashboard.",
-    author: "John Lennon",
-    role: "Founder and CEO, The Beatles",
+      "The Yarn Owls team has been supporting our content needs very smoothly since the past year. Trusting them was a great decision to ensure that content deliverables flow smoothly, requiring minimal edits. Thanks to their timely delivery and good quality content, we hope to continue this partnership for long term!",
+    author: "Indrani",
+    role: "Smarketers",
   },
   {
     quote:
-      "We've been working with Yarn Owls for a few years now. They've allowed us to add top tier front-end skills to our team at a very reasonable price. They've done an excellent job rebuilding our public website and now they're redoing our backend dashboard.",
-    author: "Paul McCartney",
-    role: "Co-founder, The Beatles",
+      "The team at Yarn Owls is responsive, prompt, and receptive to feedback, making collaboration seamless and efficient. Working with Yarn Owls has not only elevated the quality of our content but has also saved us valuable time and resources. I highly recommend Yarn Owls to any organization seeking top-notch content creation services.",
+    author: "Shaswata",
+    role: "Eon Networks",
   },
   {
     quote:
-      "We've been working with Yarn Owls for a few years now. They've allowed us to add top tier front-end skills to our team at a very reasonable price. They've done an excellent job rebuilding our public website and now they're redoing our backend dashboard.",
-    author: "George Harrison",
-    role: "Lead Guitarist, The Beatles",
+      "I recently worked with Yarn Owls and was thoroughly impressed with their services. They have a team of skilled professionals who are dedicated to creating high-quality and engaging content. Their attention to detail and commitment to understanding their clients' needs are what sets them apart.",
+    author: "Siddhant",
+    role: "Social Neeti",
   },
   {
     quote:
-      "We've been working with Yarn Owls for a few years now. They've allowed us to add top tier front-end skills to our team at a very reasonable price. They've done an excellent job rebuilding our public website and now they're redoing our backend dashboard.",
-    author: "Ringo Starr",
-    role: "Drummer, The Beatles",
+      "Yarn Owls transformed our online presence with exemplary web design and development services. Their professionalism, expertise, and meticulous attention to detail resulted in a user-friendly website that perfectly aligns with our government initiatives. Their commitment to quality and timely delivery is commendable. We highly recommend Yarn Owls.",
+    author: "Supriya",
+    role: "ADM, Govt. of West Bengal",
   },
 ];

@@ -25,7 +25,7 @@ export default function HomePage() {
           src={HeroImgSm}
           alt="hero-bg"
           priority
-          className="lg:hidden w-full h-[580px] lg:h-full max-h-[840px] rounded-xl"
+          className="lg:hidden w-full h-[707px] lg:h-full max-h-[840px] rounded-xl"
         />
         <div className="absolute inset-0 container text-center flex flex-col justify-center gap-4">
           <p className="text-white">B2B Marketing</p>

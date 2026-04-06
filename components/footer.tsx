@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Instagram, Facebook, MoveUpRight } from "lucide-react";
+import { MoveUpRight } from "lucide-react";
 import Logo from "@/public/app-logo-full.png";
 import OwlImg from "@/public/cta-img.png";
+import LinkedinImg from "@/public/linkedin.png";
+import InstagramImg from "@/public/instagram.png";
+import FacebookImg from "@/public/facebook.png";
 import ScrollThemeSection from "./scroll-theme-section";
 import { usePathname } from "next/navigation";
 import ContactButton from "./ui/contact-button";
@@ -92,7 +95,12 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
-                <Linkedin className="w-6 h-6 fill-[#0077b5] text-[#0077b5]" />
+                <Image
+                  src={LinkedinImg}
+                  alt="Linkedin"
+                  width={30}
+                  height={30}
+                />
               </Link>
               <Link
                 href="https://www.instagram.com/yarn_owls/"
@@ -100,9 +108,12 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
-                <div className="p-1 rounded bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
-                  <Instagram className="w-5 h-5 text-white" />
-                </div>
+                <Image
+                  src={InstagramImg}
+                  alt="Instagram"
+                  width={30}
+                  height={30}
+                />
               </Link>
               <Link
                 href="https://www.facebook.com/yarnowls/"
@@ -110,7 +121,12 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
-                <Facebook className="w-6 h-6 fill-[#1877f2] text-[#1877f2]" />
+                <Image
+                  src={FacebookImg}
+                  alt="Facebook"
+                  width={30}
+                  height={30}
+                />
               </Link>
             </div>
           </div>
