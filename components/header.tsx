@@ -14,6 +14,7 @@ import {
 import LogoIcon from "@/public/app-logo-full.png";
 import { Button } from "./ui/button";
 import { contactModalState } from "@/components/contact-modal";
+import ContactButton from "./ui/contact-button";
 
 const NAV_LINKS = [
   { label: "Our Services", href: "#" },
@@ -162,13 +163,7 @@ export default function Header() {
 
           {/* CTA – desktop */}
           <div className="hidden md:block">
-            <Button
-              className="h-11 rounded-xl cursor-pointer"
-              onClick={() => contactModalState.open()}
-            >
-              Get In Touch
-              <ArrowUpRight className="size-5" />
-            </Button>
+            <ContactButton className="h-10 text-sm">Get In Touch</ContactButton>
           </div>
 
           {/* Mobile: hamburger icon only */}

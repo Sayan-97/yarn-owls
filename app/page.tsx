@@ -33,9 +33,7 @@ export default function HomePage() {
             Turning <span className="font-secondary font-normal">Motion</span>{" "}
             Into <span className="font-secondary font-normal">Momentum</span>
           </h1>
-          <ContactButton size="lg" className="h-11 mx-auto">
-            Get Started <ArrowUpRightIcon />
-          </ContactButton>
+          <ContactButton className="mx-auto">Get Started</ContactButton>
         </div>
       </ScrollThemeSection>
       <TrustedBrands />

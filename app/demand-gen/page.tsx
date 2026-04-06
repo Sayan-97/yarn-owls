@@ -34,16 +34,14 @@ export default function DemandGenPage() {
               Not Just{" "}
               <span className="font-secondary font-normal">Scrolls By</span>
             </h1>
-            <p>
+            <p className="text-white font-normal">
               SEO for rankings. AEO for voice and answer engines. GEO for
               ChatGPT and AI search. AIO for multi-modal discovery. We architect
               visibility strategies that intercept buyers wherever they
               research, across every discovery channel.
             </p>
           </div>
-          <ContactButton size="lg" className="h-11">
-            Get Started <ArrowUpRightIcon />
-          </ContactButton>
+          <ContactButton>Get Started</ContactButton>
         </div>
       </ScrollThemeSection>
       <Growth />

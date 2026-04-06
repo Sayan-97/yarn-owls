@@ -18,12 +18,12 @@ export default function BlogContent({ content }: { content: unknown }) {
 
   return (
     <ScrollThemeSection>
-      <div className="container grid lg:grid-cols-[1fr_300px] gap-20 items-start">
+      <div className="container">
         {/* Main Content */}
         <RichContentViewer content={content} />
 
         {/* Sidebar */}
-        <aside className="lg:sticky lg:top-32 space-y-12 h-fit">
+        {/* <aside className="lg:sticky lg:top-32 space-y-12 h-fit">
           <div className="space-y-6">
             <h4 className="font-bold">What's on this page:</h4>
             <div className="flex flex-col gap-4">
@@ -56,7 +56,7 @@ export default function BlogContent({ content }: { content: unknown }) {
               </Link>
             </div>
           </div>
-        </aside>
+        </aside> */}
       </div>
     </ScrollThemeSection>
   );

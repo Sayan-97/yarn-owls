@@ -1,7 +1,6 @@
 import ScrollThemeSection from "@/components/scroll-theme-section";
 import Image from "next/image";
 import BgImg from "@/public/ai-seo-hero-bg.webp";
-import { ArrowUpRightIcon } from "lucide-react";
 import ContactButton from "@/components/ui/contact-button";
 
 export default function AiSeoHero() {
@@ -18,14 +17,12 @@ export default function AiSeoHero() {
             Ranked Where Decisions{" "}
             <span className="font-secondary font-normal italic">Get Made.</span>
           </h1>
-          <p className="dark text-muted w-[85%]">
+          <p className="text-white font-normal">
             SEO for Google. GEO for ChatGPT. AEO for Perplexity. AIO for voice
             and visual search. We engineer discovery strategies that capture
             intent across every platform where B2B buyers research solutions.
           </p>
-          <ContactButton size="lg" className="h-11">
-            Get Started <ArrowUpRightIcon />
-          </ContactButton>
+          <ContactButton>Get Started</ContactButton>
         </div>
       </div>
     </ScrollThemeSection>

@@ -27,15 +27,13 @@ export default function InboundHero() {
             <span className="text-highlight">Drives Deals,</span> Not Just
             Downloads.
           </h1>
-          <p>
+          <p className="text-white font-normal">
             Most agencies write for algorithms and vanity metrics. We architect
             content systems that capture buying intent, educate decision-makers,
             and accelerate your sales velocity.
           </p>
         </div>
-        <ContactButton size="lg" className="h-11">
-          Get Started <ArrowUpRightIcon />
-        </ContactButton>
+        <ContactButton>Get Started</ContactButton>
       </div>
     </ScrollThemeSection>
   );

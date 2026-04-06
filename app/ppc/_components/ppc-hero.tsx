@@ -28,15 +28,13 @@ export default function PPCHero() {
               Qualified Pipeline
             </span>
           </h1>
-          <p>
+          <p className="text-white font-normal">
             We sync ad strategy to buyer research patterns, then build campaigns
             that intercept them at every stage. From awareness to consideration
             to demo requests, we architect the complete paid journey.
           </p>
         </div>
-        <ContactButton size="lg" className="h-11">
-          Get Started <ArrowUpRightIcon />
-        </ContactButton>
+        <ContactButton>Get Started</ContactButton>
       </div>
     </ScrollThemeSection>
   );

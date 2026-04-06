@@ -1,4 +1,4 @@
-import RelatedBlogs from "./_components/related-blogs";
+// import RelatedBlogs from "./_components/related-blogs";
 import BlogContent from "./_components/blog-content";
 import BlogDetailHero from "./_components/blog-detail-hero";
 import { wixClient } from "@/lib/wix";
@@ -44,7 +44,7 @@ export default async function BlogsDetailsPage({
         </div>
       </div>
       <BlogContent content={post?.richContent} />
-      <RelatedBlogs />
+      {/* <RelatedBlogs /> */}
     </div>
   );
 }

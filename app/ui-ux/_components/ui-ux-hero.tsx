@@ -26,14 +26,12 @@ export default function UIUXHero() {
             Websites That Convert Visitors Into{" "}
             <span className="font-secondary font-normal">Qualified Leads.</span>
           </h1>
-          <p>
+          <p className="text-white font-normal">
             We don't compromise between aesthetics and results. Strategic design
             delivers both.
           </p>
         </div>
-        <ContactButton size="lg" className="h-11">
-          Get Started <ArrowUpRightIcon />
-        </ContactButton>
+        <ContactButton>Get Started</ContactButton>
       </div>
     </ScrollThemeSection>
   );

@@ -26,15 +26,13 @@ export default function CreativeHero() {
             Copy, Design, and Narratives That{" "}
             <span className="font-secondary font-normal">Drive Action</span>
           </h1>
-          <p>
+          <p className="text-white font-normal">
             From conversion-focused landing pages to category-defining thought
             leadership, we build assets that generate clarity, credibility, and
             qualified pipeline.
           </p>
         </div>
-        <ContactButton size="lg" className="h-11">
-          Get Started <ArrowUpRightIcon />
-        </ContactButton>
+        <ContactButton>Get Started</ContactButton>
       </div>
     </ScrollThemeSection>
   );

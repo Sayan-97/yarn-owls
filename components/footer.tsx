@@ -7,6 +7,7 @@ import Logo from "@/public/app-logo-full.png";
 import OwlImg from "@/public/cta-img.png";
 import ScrollThemeSection from "./scroll-theme-section";
 import { usePathname } from "next/navigation";
+import ContactButton from "./ui/contact-button";
 
 const XIcon = () => (
   <svg
@@ -56,13 +57,9 @@ export default function Footer() {
                   ? "Practical thinking on AI search, B2B content, digital strategy, websites, and performance-driven growth, without recycled advice or trend-driven filler."
                   : "We exist to help B2B brands close the gap between what marketing could be and what it actually delivers, without the fluff, filler, or cookie-cutter templates."}
               </p>
-              <button
-                type="button"
-                className="bg-white text-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:bg-zinc-100 transition-all hover:gap-3 group"
-              >
-                Book a call{" "}
-                <MoveUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              <ContactButton className="bg-white text-primary">
+                Book a call
+              </ContactButton>
             </div>
 
             {/* Decorative Owl Watermark */}

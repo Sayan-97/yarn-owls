@@ -28,9 +28,7 @@ export default function AboutUs() {
             execution into one system so brands don’t just get visibility. They
             build momentum.
           </p>
-          <ContactButton size="lg" className="h-11 mx-auto">
-            Get Started <ArrowUpRightIcon />
-          </ContactButton>
+          <ContactButton className="mx-auto">Get Started</ContactButton>
         </div>
       </ScrollThemeSection>
       <Work />
