@@ -87,13 +87,17 @@ export default function Footer() {
 
             <div className="flex items-center gap-4">
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/yarn-owls/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
                 <Linkedin className="w-6 h-6 fill-[#0077b5] text-[#0077b5]" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/yarn_owls/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
                 <div className="p-1 rounded bg-linear-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
@@ -101,16 +105,12 @@ export default function Footer() {
                 </div>
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/yarnowls/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
               >
                 <Facebook className="w-6 h-6 fill-[#1877f2] text-[#1877f2]" />
-              </Link>
-              <Link
-                href="#"
-                className="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
-              >
-                <XIcon />
               </Link>
             </div>
           </div>
@@ -123,9 +123,11 @@ export default function Footer() {
               <ul className="space-y-4">
                 {[
                   { name: "Demand Generation", href: "/demand-gen" },
-                  { name: "Content and SEO", href: "/ai-seo" },
-                  { name: "Branding", href: "/creative" },
+                  { name: "Inbound", href: "/inbound" },
+                  { name: "Creative", href: "/creative" },
                   { name: "UI/UX Designing", href: "/ui-ux" },
+                  { name: "PPC", href: "/ppc" },
+                  { name: "AI Seo", href: "/ai-seo" },
                 ].map((item) => (
                   <li key={item.name}>
                     <Link
@@ -179,16 +181,17 @@ export default function Footer() {
               <h4 className="text-zinc-500 font-semibold text-xs tracking-widest uppercase">
                 Get In Touch
               </h4>
-              <div className="space-y-4 text-gray-300 text-sm font-medium leading-relaxed">
-                <p className="max-w-[200px]">
-                  38350, Fremont Blvd, Suite 203, Fremont, CA 94536
+              <div className="space-y-4 text-sm font-medium leading-relaxed">
+                <p className="max-w-[200px] text-white">
+                  4th Floor, Gallway House, 1, Camac St, Park Street Area,
+                  Kolkata, West Bengal 700016
                 </p>
-                <p>+91 995 883 2696</p>
+                <p className="text-white">+91 7550619369</p>
                 <Link
-                  href="mailto:yarnowls.email.com"
+                  href="mailto:atriya@yarnowls.com"
                   className="block hover:text-white transition-colors"
                 >
-                  yarnowls.email.com
+                  atriya@yarnowls.com
                 </Link>
               </div>
             </div>
