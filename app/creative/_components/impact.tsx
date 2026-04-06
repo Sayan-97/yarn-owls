@@ -69,14 +69,24 @@ export default function Impact() {
           {/* Horizontal track */}
           <div className="w-full">
             <motion.div
-              style={{ x }}
-              className="flex gap-6 w-max pl-5 md:pl-12.5 lg:pl-34 pr-5 lg:pr-34 will-change-transform"
+              style={{
+                x,
+                paddingLeft: "var(--container-offset)",
+                paddingRight: "var(--container-offset)",
+              }}
+              className="flex gap-6 w-max will-change-transform"
             >
-              {list.map((_item) => (
+              {[1, 2, 3, 4, 5, 6].map((num) => (
                 <div
-                  key={_item.title}
-                  className="w-[85vw] sm:w-[55vw] lg:w-[696px] bg-card rounded-4xl p-8 flex flex-col gap-5 h-[562px]"
-                ></div>
+                  key={num}
+                  className="w-[85vw] sm:w-[70vw] lg:w-[843px] bg-card rounded-4xl overflow-hidden h-[300px] md:h-[450px] lg:h-[562px] relative shrink-0"
+                >
+                  <img
+                    src={`/creative-${num}.png`}
+                    alt={`Creative Work ${num}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ))}
             </motion.div>
           </div>
