@@ -125,17 +125,17 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4">
                 {[
-                  "Demand Generation",
-                  "Content and SEO",
-                  "Branding",
-                  "UI/UX Designing",
+                  { name: "Demand Generation", href: "/demand-gen" },
+                  { name: "Content and SEO", href: "/ai-seo" },
+                  { name: "Branding", href: "/creative" },
+                  { name: "UI/UX Designing", href: "/ui-ux" },
                 ].map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <Link
-                      href="#"
+                      href={item.href}
                       className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
                     >
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -147,13 +147,13 @@ export default function Footer() {
                 Company
               </h4>
               <ul className="space-y-4">
-                {["About Us"].map((item) => (
-                  <li key={item}>
+                {[{ name: "About Us", href: "/about-us" }].map((item) => (
+                  <li key={item.name}>
                     <Link
-                      href="#"
+                      href={item.href}
                       className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
                     >
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -165,13 +165,13 @@ export default function Footer() {
                 Resources
               </h4>
               <ul className="space-y-4">
-                {["Blogs"].map((item) => (
-                  <li key={item}>
+                {[{ name: "Blogs", href: "/blogs" }].map((item) => (
+                  <li key={item.name}>
                     <Link
-                      href="#"
+                      href={item.href}
                       className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
                     >
-                      {item}
+                      {item.name}
                     </Link>
                   </li>
                 ))}
