@@ -62,8 +62,12 @@ export default function Us() {
           {/* Horizontal track */}
           <div className="w-full">
             <motion.div
-              style={{ x }}
-              className="flex gap-6 w-max pl-5 md:pl-12.5 lg:pl-34 pr-5 lg:pr-34 will-change-transform"
+              style={{
+                x,
+                paddingLeft: "var(--container-offset)",
+                paddingRight: "var(--container-offset)",
+              }}
+              className="flex gap-6 w-max will-change-transform"
             >
               {list.map((item) => (
                 <div

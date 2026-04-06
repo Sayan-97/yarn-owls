@@ -82,3 +82,20 @@ html {
 .text-highlight {
   @apply text-primary font-secondary font-normal;
 }
+
+:root {
+  --container-px: 1.25rem; /* px-5 */
+  --container-offset: calc(max(var(--container-px), (100vw - 90rem) / 2 + var(--container-px)));
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-px: 3.125rem; /* px-12.5 */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-px: 6.25rem; /* px-25 */
+  }
+}
