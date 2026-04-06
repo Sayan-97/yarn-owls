@@ -18,7 +18,7 @@ export default function InboundHero() {
         src={HeroImgSm}
         alt="hero-bg"
         priority
-        className="lg:hidden w-full h-[580px] lg:h-full max-h-[840px]"
+        className="lg:hidden w-full h-[580px] lg:h-full max-h-[840px] rounded-xl"
       />
       <div className="absolute inset-0 container flex flex-col items-start justify-center gap-6">
         <div className="lg:w-1/2">

@@ -15,7 +15,7 @@ export default function AboutUs() {
           src={HeroImg}
           alt="hero-bg"
           priority
-          className="w-full h-[580px] lg:h-full max-h-[840px]"
+          className="w-full h-[580px] lg:h-full max-h-[840px] max-lg:rounded-xl"
         />
         <div className="absolute inset-0 container text-center flex flex-col justify-center gap-8">
           <h1 className="lg:w-full mx-auto text-white">
